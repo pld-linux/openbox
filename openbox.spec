@@ -10,15 +10,15 @@ Group:		X11/Window Managers
 #Source0:	http://icculus.org/openbox/releases/%{name}-%{version}.tar.gz
 Source0:	%{name}-%{_snap}.tar.bz2
 Patch0:		%{name}-paths.patch
-URL:		http://icullus.org/openbox
+URL:		http://icullus.org/openbox/
 BuildRequires:	XFree86-devel
-BuildRequires:	libstdc++-devel
 BuildRequires:	Xft-devel >= 2.0
-BuildRequires:	fontconfig-devel
-BuildRequires:	pkgconfig
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
+BuildRequires:	fontconfig-devel
+BuildRequires:	libstdc++-devel
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/X11/%{name}
@@ -46,9 +46,12 @@ rm -f missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sysconfdir}}
+install -d $RPM_BUILD_ROOT%{_sysconfdir}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %post
 echo
@@ -56,9 +59,6 @@ echo "Remember to copy from /etc/X11/openbox menu and epistrc "
 echo "to your ~/.openbox dir. menu file should contain only"
 echo "UTF-8 characters!"
 echo
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
@@ -70,6 +70,10 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/openbox
 %{_datadir}/openbox/buttons
 %{_datadir}/openbox/styles
+%dir %{_datadir}/nls
+# TODO: add %{_datadir}/openbox/nls/* dirs with %lang(),
+#	but maybe it's sufficient to include whole directories?
+#	I'll check later...  --q
 %{_datadir}/openbox/nls/C/%{name}.cat
 %lang(da) %{_datadir}/openbox/nls/da_DK/%{name}.cat
 %lang(de) %{_datadir}/openbox/nls/de_DE/%{name}.cat
