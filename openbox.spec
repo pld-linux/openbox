@@ -1,8 +1,8 @@
 # TODO:
-# - need to put rc3 file in a right place (FHS)
+# - need to put rc3 and menu files in a right place (FHS)
 # - better description
 #
-%define         _alpha  alpha5
+%define         _alpha  alpha6
 Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
@@ -12,7 +12,7 @@ License:	GPL
 Group:		X11/Window Managers
 Vendor:		Ben Jansens (ben@orodu.net)
 Source0:	http://openbox.org/releases/%{name}-%{version}-%{_alpha}.tar.gz
-# Source0-md5:	3fcc367451176b449b47f2d184d45dc1
+# Source0-md5:	09fffebd0c7066d3aab4f4fa4242720c
 URL:		http://openbox.org/
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
