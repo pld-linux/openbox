@@ -29,7 +29,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	startup-notification-devel
 BuildRequires:	xft-devel >= 2.0
 Requires(post):	/sbin/ldconfig
-Requires:	openbox-theme-base = %{version}
+Requires:	openbox-theme-base = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_wmpropsdir	/usr/share/wm-properties
@@ -72,7 +72,7 @@ Statyczna biblioteka openbox.
 Summary:	Allegro theme for openbox
 Summary(pl):	Motyw Allegro dla openboxa
 Group:		Themes
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description themes-Allegro
 Allegro theme for openbox.
@@ -84,7 +84,7 @@ Motyw Allegro dla openboxa.
 Summary:	Artwiz theme for openbox
 Summary(pl):	Motyw Artwiz dla openboxa
 Group:		Themes
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description themes-Artwiz
 Artwiz theme for openbox.
@@ -96,7 +96,7 @@ Motyw Artwiz dla openboxa.
 Summary:	Blah41 theme for openbox
 Summary(pl):	Motyw Blah41 dla openboxa
 Group:		Themes
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description themes-Blah41
 Blah41 theme for openbox.
@@ -108,7 +108,7 @@ Motyw Blah41 dla openboxa.
 Summary:	Om4Ob theme for openbox
 Summary(pl):	Motyw Om4Ob dla openboxa
 Group:		Themes
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description themes-Om4Ob
 Om4Ob theme for openbox.
@@ -120,8 +120,8 @@ Motyw Om4Ob dla openboxa.
 Summary:	TheBear theme for openbox
 Summary(pl):	Motyw TheBear dla openboxa
 Group:		Themes
-Requires:	%{name} = %{version}
-Provides:	openbox-theme-base = %{version}
+Requires:	%{name} = %{version}-%{release}
+Provides:	openbox-theme-base = %{version}-%{release}
 
 %description themes-TheBear
 TheBear theme for openbox.
