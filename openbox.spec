@@ -1,6 +1,6 @@
 %define		_snap 20030505
 
-Summary:	Small and fast window manger for the X Window
+Summary:	Small and fast window manager for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
 Version:	2.3.1
@@ -34,13 +34,12 @@ themeing. Openbox has fairly complete support for the NetWM X11 Spec.
 Openbox is therefore compatible with desktop environments, such as
 KDE 3 and Gnome 2.
 
-
 %description -l pl
 Openbox jest zarz±dc± okien dla systemu X11. W chwili obecnej pracuje
-na wielu platformach systemowych. Pierwotnie by³ on oparty o Blackbox'a
-i aktulnie przypomina go u¿ywaj±c nawet styli Blackbox'a jako
-w³asnych. Openbox ma prawie kompletne wsparcie dla specyfikacji NetWM
-X11 Spec. Dlatego te¿ jest zgodny ze ¶rodowiskami jak KDE 3 i GNOME 2.
+na wielu platformach systemowych. Pierwotnie by³ on oparty o Blackboksa
+i nadal go przypomina, nawet u¿ywaj±c styli Blackboksa jako w³asnych.
+Openbox ma prawie kompletne wsparcie dla specyfikacji NetWM X11 Spec.
+Dlatego te¿ jest zgodny ze ¶rodowiskami takimi jak KDE 3 i GNOME 2.
 
 %prep
 %setup -q -n %{name}-%{_snap}
