@@ -2,21 +2,21 @@
 # - need to put rc3 file in a right place (FHS)
 # - better description
 #
-# Conditional build:
+# Conditional build (disabled for now)
 # _with_obconf          - with openbox configuration utility
 #                         (doesn't work yet)
 #
-%define         _alpha  alpha1
+%define         _alpha  alpha2
 Summary:        Small and fast window manger for the X Window
 Summary(pl):    Ma³y i szybki zarz±dca okien dla X Window
 Name:           openbox
 Version:        3.0
-Release:        0.%{_alpha}.2
+Release:        0.%{_alpha}.1
 License:        GPL
 Group:          X11/Window Managers
 Vendor:         Ben Jansens (ben@orodu.net)
 Source0:        http://openbox.org/releases/%{name}-%{version}-%{_alpha}.tar.gz
-# Source0-md5:	9dbb15ca622ad6fb1084383d3ab455b4
+# Source0-md5:	51913da13fad5c7950618d89a9d940ba
 URL:            http://openbox.org/
 BuildRequires:  XFree86-devel
 BuildRequires:  autoconf
@@ -25,7 +25,7 @@ BuildRequires:  bison
 BuildRequires:  flex
 BuildRequires:  gettext-autopoint
 BuildRequires:  gtk+2-devel
-%{?_with_obconf:BuildRequires:  libglade2-devel}
+#%{?_with_obconf:BuildRequires:  libglade2-devel}
 BuildRequires:  libtool
 BuildRequires:  pkgconfig
 BuildRequires:  startup-notification-devel
@@ -34,7 +34,7 @@ Requires(post): /sbin/ldconfig
 Obsoletes:      openbox < 3.0
 BuildRoot:      %{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define         _wmpropsdir     /usr/share/wm-properties
+#%define         _wmpropsdir     /usr/share/wm-properties
 
 %description
 Openbox3 is a completely new window manager, and is not based upon any
@@ -86,11 +86,11 @@ echo
 %defattr(644,root,root,755)
 %doc README* ChangeLog TODO
 %attr(755,root,root) %{_bindir}/%{name}
-%{?_with_obconf:%attr(755,root,root) %{_bindir}/obconf}
+#%{?_with_obconf:%attr(755,root,root) %{_bindir}/obconf}
 %dir %{_datadir}/openbox
 %dir %{_libdir}/openbox/plugins
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %attr(755,root,root) %{_libdir}/openbox/plugins/*.so
 %{_datadir}/openbox/rc3
 %{_datadir}/openbox/themes
-%{_wmpropsdir}/openbox.desktop
+#%{_wmpropsdir}/openbox.desktop
