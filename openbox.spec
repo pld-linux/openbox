@@ -3,34 +3,34 @@
 # - better description
 #
 %define         _alpha  alpha4
-Summary:        Small and fast window manger for the X Window
-Summary(pl):    Ma³y i szybki zarz±dca okien dla X Window
-Name:           openbox
-Version:        3.0
-Release:        0.%{_alpha}.1
-License:        GPL
-Group:          X11/Window Managers
-Vendor:         Ben Jansens (ben@orodu.net)
-Source0:        http://openbox.org/releases/%{name}-%{version}-%{_alpha}.tar.gz
+Summary:	Small and fast window manger for the X Window
+Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
+Name:		openbox
+Version:	3.0
+Release:	0.%{_alpha}.1
+License:	GPL
+Group:		X11/Window Managers
+Vendor:		Ben Jansens (ben@orodu.net)
+Source0:	http://openbox.org/releases/%{name}-%{version}-%{_alpha}.tar.gz
 # Source0-md5:	1701fd58e3537430b3711c7ae5fea37f
-URL:            http://openbox.org/
-BuildRequires:  XFree86-devel
-BuildRequires:  autoconf
-BuildRequires:  automake
-BuildRequires:  bison
-BuildRequires:  flex
-BuildRequires:  gettext-autopoint
-BuildRequires:  gtk+2-devel
-BuildRequires:  libglade2-devel
-BuildRequires:  libtool
-BuildRequires:  pkgconfig
-BuildRequires:  startup-notification-devel
-BuildRequires:  xft-devel >= 2.0
-Requires(post): /sbin/ldconfig
-Obsoletes:      openbox < 3.0
-BuildRoot:      %{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+URL:		http://openbox.org/
+BuildRequires:	XFree86-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	bison
+BuildRequires:	flex
+BuildRequires:	gettext-autopoint
+BuildRequires:	gtk+2-devel
+BuildRequires:	libglade2-devel
+BuildRequires:	libtool
+BuildRequires:	pkgconfig
+BuildRequires:	startup-notification-devel
+BuildRequires:	xft-devel >= 2.0
+Requires(post):	/sbin/ldconfig
+Obsoletes:	openbox < 3.0
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define         _wmpropsdir     /usr/share/wm-properties
+%define		_wmpropsdir	/usr/share/wm-properties
 
 %description
 Openbox3 is a completely new window manager, and is not based upon any
