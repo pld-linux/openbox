@@ -1,9 +1,17 @@
+# TODO:
+# - need to put rc3 file in a right place (FHS)
+# - better description
+#
+# Conditional build:
+# _with_obconf          - with openbox configuration utility
+#                         (doesn't work yet)
+#
 %define         _alpha  alpha1
 Summary:        Small and fast window manger for the X Window
 Summary(pl):    Ma³y i szybki zarz±dca okien dla X Window
 Name:           openbox
 Version:        3.0
-Release:        0.%{_alpha}.1
+Release:        0.%{_alpha}.2
 License:        GPL
 Group:          X11/Window Managers
 Vendor:         Ben Jansens (ben@orodu.net)
@@ -17,7 +25,7 @@ BuildRequires:  bison
 BuildRequires:  flex
 BuildRequires:  gettext-autopoint
 BuildRequires:  gtk+2-devel
-BuildRequires:  libglade2-devel
+%{?_with_obconf:BuildRequires:  libglade2-devel}
 BuildRequires:  libtool
 BuildRequires:  pkgconfig
 BuildRequires:  startup-notification-devel
@@ -74,12 +82,12 @@ echo
 %files
 %defattr(644,root,root,755)
 %doc README* ChangeLog TODO
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/%{name}
+%{?_with_obconf:%attr(755,root,root) %{_bindir}/obconf}
 %dir %{_datadir}/openbox
 %dir %{_libdir}/openbox/plugins
-%attr(755,root,root) %{_libdir}/*.so*
+%attr(755,root,root) %{_libdir}/*.so.*
 %attr(755,root,root) %{_libdir}/openbox/plugins/*.so
-%{_libdir}/openbox/plugins/*.la
 %{_datadir}/openbox/rc3
 %{_datadir}/openbox/themes
 %{_wmpropsdir}/openbox.desktop
