@@ -1,8 +1,9 @@
 # TODO:
 # - need to put rc3 and menu files in a right place (FHS)
+#   (but first in beta stage)
 # - better description
 #
-%define         _alpha  alpha6
+%define         _alpha  alpha7
 Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
@@ -12,7 +13,7 @@ License:	GPL
 Group:		X11/Window Managers
 Vendor:		Ben Jansens (ben@orodu.net)
 Source0:	http://openbox.org/releases/%{name}-%{version}-%{_alpha}.tar.gz
-# Source0-md5:	09fffebd0c7066d3aab4f4fa4242720c
+# Source0-md5:	27bf54257344cff0b8d1a89abf645d7b
 URL:		http://openbox.org/
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
@@ -64,7 +65,6 @@ rm -rf $RPM_BUILD_ROOT
 	desktopfilesdir=%{_wmpropsdir}
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
-rm -f $RPM_BUILD_ROOT%{_libdir}/openbox/plugins/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -84,9 +84,7 @@ echo
 %doc README* ChangeLog TODO
 %attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/openbox
-%dir %{_libdir}/openbox/plugins
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
-%attr(755,root,root) %{_libdir}/openbox/plugins/*.so
 %{_datadir}/openbox/menu
 %{_datadir}/openbox/rc3
 %{_datadir}/openbox/themes
