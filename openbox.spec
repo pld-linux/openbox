@@ -63,6 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	desktopfilesdir=%{_wmpropsdir}
 
+rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 rm -f $RPM_BUILD_ROOT%{_libdir}/openbox/plugins/*.la
 
 %clean
@@ -86,6 +87,8 @@ echo
 %dir %{_libdir}/openbox/plugins
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %attr(755,root,root) %{_libdir}/openbox/plugins/*.so
+%{_datadir}/openbox/menu
 %{_datadir}/openbox/rc3
 %{_datadir}/openbox/themes
+
 %{_wmpropsdir}/openbox.desktop
