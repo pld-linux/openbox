@@ -8,7 +8,7 @@ Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
 Version:	3.0
-%define         _beta	beta6
+%define		_beta	beta6
 Release:	1.%{_beta}.0
 License:	GPL
 Group:		X11/Window Managers
@@ -59,8 +59,8 @@ Development header files for writing applications based on openbox.
 Pliki nag³ówkowe do tworzenia oprogramowania opartego o openbox.
 
 %package static
-Summary:	Static openbox library 
-Summary(pl):	Statyczna biblioteka openbox 
+Summary:	Static openbox library
+Summary(pl):	Statyczna biblioteka openbox
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -71,63 +71,63 @@ Static openbox library.
 Statyczna biblioteka openbox.
 
 %package themes-Allegro
-Summary:        Allegro theme for openbox
-Summary(pl):    Motyw Allegro dla openboxa
-Group:          Themes
-Requires:       %{name} = %{version}
+Summary:	Allegro theme for openbox
+Summary(pl):	Motyw Allegro dla openboxa
+Group:		Themes
+Requires:	%{name} = %{version}
 
 %description themes-Allegro
 Allegro theme for openbox.
-                                                                                                        
+
 %description themes-Allegro -l pl
 Motyw Allegro dla openboxa.
 
 %package themes-Artwiz
-Summary:        Artwiz theme for openbox
-Summary(pl):    Motyw Artwiz dla openboxa
-Group:          Themes
-Requires:       %{name} = %{version}
+Summary:	Artwiz theme for openbox
+Summary(pl):	Motyw Artwiz dla openboxa
+Group:		Themes
+Requires:	%{name} = %{version}
 
 %description themes-Artwiz
 Artwiz theme for openbox.
-                                                                                                        
+
 %description themes-Artwiz -l pl
 Motyw Artwiz dla openboxa.
 
 %package themes-Blah41
-Summary:        Blah41 theme for openbox
-Summary(pl):    Motyw Blah41 dla openboxa
-Group:          Themes
-Requires:       %{name} = %{version}
+Summary:	Blah41 theme for openbox
+Summary(pl):	Motyw Blah41 dla openboxa
+Group:		Themes
+Requires:	%{name} = %{version}
 
 %description themes-Blah41
 Blah41 theme for openbox.
-                                                                                                        
+
 %description themes-Allegro -l pl
 Motyw Blah41 dla openboxa.
 
 %package themes-Om4Ob
-Summary:        Om4Ob theme for openbox
-Summary(pl):    Motyw Om4Ob dla openboxa
-Group:          Themes
-Requires:       %{name} = %{version}
+Summary:	Om4Ob theme for openbox
+Summary(pl):	Motyw Om4Ob dla openboxa
+Group:		Themes
+Requires:	%{name} = %{version}
 
 %description themes-Om4Ob
 Om4Ob theme for openbox.
-                                                                                                        
+
 %description themes-Om4Ob -l pl
 Motyw Om4Ob dla openboxa.
 
 %package themes-TheBear
-Summary:        TheBear theme for openbox
-Summary(pl):    Motyw TheBear dla openboxa
-Group:          Themes
-Requires:       %{name} = %{version}
+Summary:	TheBear theme for openbox
+Summary(pl):	Motyw TheBear dla openboxa
+Group:		Themes
+Requires:	%{name} = %{version}
 Provides:	openbox-theme-base = %{version}
 
 %description themes-TheBear
 TheBear theme for openbox.
-                                                                                                        
+
 %description themes-Allegro -l pl
 Motyw TheBear dla openboxa.
 
