@@ -3,7 +3,7 @@
 #   (but first in beta stage)
 # - better description
 #
-%define         _alpha  alpha7
+%define         _alpha  alpha8
 Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
@@ -13,7 +13,7 @@ License:	GPL
 Group:		X11/Window Managers
 Vendor:		Ben Jansens (ben@orodu.net)
 Source0:	http://openbox.org/releases/%{name}-%{version}-%{_alpha}.tar.gz
-# Source0-md5:	27bf54257344cff0b8d1a89abf645d7b
+# Source0-md5:	af0efee91aaf9801b37eb6dac830fe07
 URL:		http://openbox.org/
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
@@ -72,9 +72,8 @@ rm -rf $RPM_BUILD_ROOT
 %post
 /sbin/ldconfig
 echo
-echo "Remember to copy from /usr/share/openbox rc3 file"
-echo "to your ~/.openbox dir. rc3 should contain only"
-echo "UTF-8 characters!"
+echo "Remember to copy from /usr/share/openbox *.xml files"
+echo "to your ~/.openbox dir."
 echo
 
 %postun -p /sbin/ldconfig
@@ -85,7 +84,6 @@ echo
 %attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/openbox
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
-%{_datadir}/openbox/menu
-%{_datadir}/openbox/rc3
+%{_datadir}/openbox/*.xml
 %{_datadir}/openbox/themes
 %{_wmpropsdir}/openbox.desktop
