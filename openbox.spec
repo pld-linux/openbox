@@ -71,32 +71,29 @@ echo
 %{_datadir}/openbox/buttons
 %{_datadir}/openbox/styles
 %dir %{_datadir}/nls
-# TODO: add %{_datadir}/openbox/nls/* dirs with %lang(),
-#	but maybe it's sufficient to include whole directories?
-#	I'll check later...  --q
-%{_datadir}/openbox/nls/C/%{name}.cat
-%lang(da) %{_datadir}/openbox/nls/da_DK/%{name}.cat
-%lang(de) %{_datadir}/openbox/nls/de_DE/%{name}.cat
-%lang(es_AR) %{_datadir}/openbox/nls/es_AR/%{name}.cat
-%lang(es_ES) %{_datadir}/openbox/nls/es_ES/%{name}.cat
-%lang(et) %{_datadir}/openbox/nls/et_ET/%{name}.cat
-%lang(fr) %{_datadir}/openbox/nls/fr_FR/%{name}.cat
-%lang(hu) %{_datadir}/openbox/nls/hu_HU/%{name}.cat
-%lang(it) %{_datadir}/openbox/nls/it_IT/%{name}.cat
-%lang(ja) %{_datadir}/openbox/nls/ja_JP/%{name}.cat
-%lang(ko) %{_datadir}/openbox/nls/ko_KR/%{name}.cat
-%lang(nl) %{_datadir}/openbox/nls/nl_NL/%{name}.cat
-%lang(no) %{_datadir}/openbox/nls/no_NO/%{name}.cat
-%lang(pl) %{_datadir}/openbox/nls/pl_PL/%{name}.cat
-%lang(pt) %{_datadir}/openbox/nls/pt_BR/%{name}.cat
-%lang(ro) %{_datadir}/openbox/nls/ro_RO/%{name}.cat
-%lang(ru) %{_datadir}/openbox/nls/ru_RU/%{name}.cat
-%lang(sk) %{_datadir}/openbox/nls/sk_SK/%{name}.cat
-%lang(sl) %{_datadir}/openbox/nls/sl_SI/%{name}.cat
-%lang(sv) %{_datadir}/openbox/nls/sv_SE/%{name}.cat
-%lang(tr) %{_datadir}/openbox/nls/tr_TR/%{name}.cat
-%lang(uk) %{_datadir}/openbox/nls/uk_UA/%{name}.cat
-%lang(zh_CN) %{_datadir}/openbox/nls/zh_CN/%{name}.cat
-%lang(zh_TW) %{_datadir}/openbox/nls/zh_TW/%{name}.cat
+%{_datadir}/openbox/nls/C
+%lang(da) %{_datadir}/openbox/nls/da_DK
+%lang(de) %{_datadir}/openbox/nls/de_DE
+%lang(es_AR) %{_datadir}/openbox/nls/es_AR
+%lang(es_ES) %{_datadir}/openbox/nls/es_ES
+%lang(et) %{_datadir}/openbox/nls/et_ET
+%lang(fr) %{_datadir}/openbox/nls/fr_FR
+%lang(hu) %{_datadir}/openbox/nls/hu_HU
+%lang(it) %{_datadir}/openbox/nls/it_IT
+%lang(ja) %{_datadir}/openbox/nls/ja_JP
+%lang(ko) %{_datadir}/openbox/nls/ko_KR
+%lang(nl) %{_datadir}/openbox/nls/nl_NL
+%lang(no) %{_datadir}/openbox/nls/no_NO
+%lang(pl) %{_datadir}/openbox/nls/pl_PL
+%lang(pt) %{_datadir}/openbox/nls/pt_BR
+%lang(ro) %{_datadir}/openbox/nls/ro_RO
+%lang(ru) %{_datadir}/openbox/nls/ru_RU
+%lang(sk) %{_datadir}/openbox/nls/sk_SK
+%lang(sl) %{_datadir}/openbox/nls/sl_SI
+%lang(sv) %{_datadir}/openbox/nls/sv_SE
+%lang(tr) %{_datadir}/openbox/nls/tr_TR
+%lang(uk) %{_datadir}/openbox/nls/uk_UA
+%lang(zh_CN) %{_datadir}/openbox/nls/zh_CN
+%lang(zh_TW) %{_datadir}/openbox/nls/zh_TW
 %{_mandir}/man1/*
 %{_mandir}/man5/*
