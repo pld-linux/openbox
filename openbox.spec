@@ -9,6 +9,7 @@ License:	GPL
 Group:		X11/Window Managers
 #Source0:	http://icculus.org/openbox/releases/%{name}-%{version}.tar.gz
 Source0:	%{name}-%{_snap}.tar.bz2
+# Source0-md5:	c9a04288cc9c807b2d6d6d0c6f5c1707
 Patch0:		%{name}-paths.patch
 Patch1:		%{name}-gcc_3.3_fix.patch
 URL:		http://icculus.org/openbox/
