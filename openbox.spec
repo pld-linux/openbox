@@ -1,17 +1,15 @@
-# TODO:
-# - better description
-#
+%define		_rc rc1
 Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
-Version:	3.2
-Release:	1
+Version:	3.3
+Release:	0.%{_rc}.1
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
 Vendor:		Ben Jansens (ben@orodu.net)
-Source0:	http://openbox.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	96b6393839883c4b260388879154d294
+Source0:	http://openbox.org/releases/%{name}-%{version}-%{_rc}.tar.gz
+# Source0-md5:	83bbb28369050f5767f5b4f5c34d90e0
 Source1:	%{name}-xsession.desktop
 URL:		http://openbox.org/
 BuildRequires:	XFree86-devel
@@ -129,7 +127,7 @@ TheBear theme for openbox.
 Motyw TheBear dla openboxa.
 
 %prep
-%setup -q
+%setup -qn %{name}-%{version}-%{_rc}
 
 %build
 rm -f missing
@@ -168,7 +166,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc CHANGELOG README TODO
+%doc CHANGELOG COMPLIANCE README
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %dir %{_datadir}/openbox
