@@ -8,7 +8,7 @@ Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
 Version:	3.0
 %define		_rc	rc3
-Release:	1.%{_rc}.0
+Release:	0.%{_rc}.1
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
