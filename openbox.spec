@@ -4,14 +4,14 @@
 Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
-Version:	3.1
-Release:	2
+Version:	3.2
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
 Vendor:		Ben Jansens (ben@orodu.net)
 Source0:	http://openbox.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	3152631bb8c892b919129e2a58978aad
+# Source0-md5:	96b6393839883c4b260388879154d294
 Source1:	%{name}-xsession.desktop
 URL:		http://openbox.org/
 BuildRequires:	XFree86-devel
