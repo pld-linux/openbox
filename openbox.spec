@@ -2,7 +2,7 @@
 # - need to put rc3 file in a right place (FHS)
 # - better description
 #
-%define         _alpha  alpha3
+%define         _alpha  alpha4
 Summary:        Small and fast window manger for the X Window
 Summary(pl):    Ma³y i szybki zarz±dca okien dla X Window
 Name:           openbox
@@ -12,7 +12,7 @@ License:        GPL
 Group:          X11/Window Managers
 Vendor:         Ben Jansens (ben@orodu.net)
 Source0:        http://openbox.org/releases/%{name}-%{version}-%{_alpha}.tar.gz
-# Source0-md5:	1ad49346b5132dc9867e9611aebd5066
+# Source0-md5:	1701fd58e3537430b3711c7ae5fea37f
 URL:            http://openbox.org/
 BuildRequires:  XFree86-devel
 BuildRequires:  autoconf
@@ -30,7 +30,7 @@ Requires(post): /sbin/ldconfig
 Obsoletes:      openbox < 3.0
 BuildRoot:      %{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-#%define         _wmpropsdir     /usr/share/wm-properties
+%define         _wmpropsdir     /usr/share/wm-properties
 
 %description
 Openbox3 is a completely new window manager, and is not based upon any
@@ -88,4 +88,4 @@ echo
 %attr(755,root,root) %{_libdir}/openbox/plugins/*.so
 %{_datadir}/openbox/rc3
 %{_datadir}/openbox/themes
-#%{_wmpropsdir}/openbox.desktop
+%{_wmpropsdir}/openbox.desktop
