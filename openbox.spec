@@ -10,6 +10,7 @@ Group:		X11/Window Managers
 #Source0:	http://icculus.org/openbox/releases/%{name}-%{version}.tar.gz
 Source0:	%{name}-%{_snap}.tar.bz2
 Patch0:		%{name}-paths.patch
+Patch1:		%{name}-gcc_3.3_fix.patch
 URL:		http://icculus.org/openbox/
 BuildRequires:	XFree86-devel
 BuildRequires:	Xft-devel >= 2.0
@@ -34,6 +35,7 @@ na wielu platformach systemowych.
 %prep
 %setup -q -n %{name}-%{_snap}
 %patch0 -p1
+%patch1 -p0
 
 %build
 rm -f missing
