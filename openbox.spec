@@ -2,8 +2,6 @@
 # - better description
 # - prepare it to working with GNOME as a replacement for
 #   metacity
-# - /etc/xdg can not be a part of this package (FHS ?)
-#   http://www.freedesktop.org/standards/basedir-spec/0.6-onehtml/
 #
 Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
@@ -167,7 +165,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %dir %{_datadir}/openbox
 %{_datadir}/openbox/*
-%dir %{_sysconfdir}/xdg
 %dir %{_sysconfdir}/xdg/openbox
 %{_sysconfdir}/xdg/openbox/*.xml
 %{_wmpropsdir}/openbox.desktop
