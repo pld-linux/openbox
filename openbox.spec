@@ -5,7 +5,7 @@ Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
 Version:	2.3.1
 Release:	0.%{_snap}.1
-License:	GPL
+License:	BSD-like
 Group:		X11/Window Managers
 #Source0:	http://icculus.org/openbox/releases/%{name}-%{version}.tar.gz
 Source0:	%{name}-%{_snap}.tar.bz2
@@ -74,7 +74,7 @@ echo
 
 %files
 %defattr(644,root,root,755)
-%doc README* CHANGELOG TODO util/epist/ChangeLog
+%doc AUTHORS CHANGELOG LICENSE README* TODO util/epist/ChangeLog
 %attr(755,root,root) %{_bindir}/*
 %dir %{_sysconfdir}
 %{_sysconfdir}/menu
