@@ -1,20 +1,21 @@
 # TODO:
-# - need to put rc.xml file in a right place (FHS)
-#   (but first in beta stage)
 # - better description
-# - static lib (?)
+# - prepare it to working with GNOME as a replacement for
+#   metacity
+# - /etc/xdg can not be a part of this package (FHS ?)
+#   http://www.freedesktop.org/standards/basedir-spec/0.6-onehtml/
 #
 Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
 Version:	3.0
-%define         _beta	beta3
-Release:	0.%{_beta}.1
+%define         _beta	beta4
+Release:	1.%{_beta}.0
 License:	GPL
 Group:		X11/Window Managers
 Vendor:		Ben Jansens (ben@orodu.net)
 Source0:	http://openbox.org/releases/%{name}-%{version}-%{_beta}.tar.gz
-# Source0-md5:	bf8bc82b56568b6cd30575e9fc1874fa
+# Source0-md5:	fc637102fa0264b7789db55697d1a135
 URL:		http://openbox.org/
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
@@ -29,6 +30,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	startup-notification-devel
 BuildRequires:	xft-devel >= 2.0
 Requires(post):	/sbin/ldconfig
+Requires:	openbox-theme-base = %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_wmpropsdir	/usr/share/wm-properties
@@ -54,6 +56,79 @@ Development header files for writing applications based on openbox.
 
 %description devel -l pl
 Pliki nag³ówkowe do tworzenia oprogramowania opartego o openbox.
+
+%package static
+Summary:	Static openbox library 
+Summary(pl):	Statyczna biblioteka openbox 
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
+
+%description static
+Static openbox library.
+
+%description static -l pl
+Statyczna biblioteka openbox.
+
+%package themes-Allegro
+Summary:        Allegro theme for openbox
+Summary(pl):    Motyw Allegro dla openboxa
+Group:          Themes
+Requires:       %{name} = %{version}
+
+%description themes-Allegro
+Allegro theme for openbox.
+                                                                                                        
+%description themes-Allegro -l pl
+Motyw Allegro dla openboxa.
+
+%package themes-Artwiz
+Summary:        Artwiz theme for openbox
+Summary(pl):    Motyw Artwiz dla openboxa
+Group:          Themes
+Requires:       %{name} = %{version}
+
+%description themes-Artwiz
+Artwiz theme for openbox.
+                                                                                                        
+%description themes-Artwiz -l pl
+Motyw Artwiz dla openboxa.
+
+%package themes-Blah41
+Summary:        Blah41 theme for openbox
+Summary(pl):    Motyw Blah41 dla openboxa
+Group:          Themes
+Requires:       %{name} = %{version}
+
+%description themes-Blah41
+Blah41 theme for openbox.
+                                                                                                        
+%description themes-Allegro -l pl
+Motyw Blah41 dla openboxa.
+
+%package themes-Om4Ob
+Summary:        Om4Ob theme for openbox
+Summary(pl):    Motyw Om4Ob dla openboxa
+Group:          Themes
+Requires:       %{name} = %{version}
+
+%description themes-Om4Ob
+Om4Ob theme for openbox.
+                                                                                                        
+%description themes-Om4Ob -l pl
+Motyw Om4Ob dla openboxa.
+
+%package themes-TheBear
+Summary:        TheBear theme for openbox
+Summary(pl):    Motyw TheBear dla openboxa
+Group:          Themes
+Requires:       %{name} = %{version}
+Provides:	openbox-theme-base = %{version}
+
+%description themes-TheBear
+TheBear theme for openbox.
+                                                                                                        
+%description themes-Allegro -l pl
+Motyw TheBear dla openboxa.
 
 %prep
 %setup -q -n %{name}-%{version}-%{_beta}
@@ -82,10 +157,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
-echo
-echo "Remember to copy from /usr/share/openbox *.xml files"
-echo "to your ~/.openbox dir."
-echo
 
 %postun -p /sbin/ldconfig
 
@@ -95,8 +166,10 @@ echo
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %dir %{_datadir}/openbox
-%{_datadir}/openbox/*.xml
-%{_datadir}/openbox/themes
+%{_datadir}/openbox/*
+%dir %{_sysconfdir}/xdg
+%dir %{_sysconfdir}/xdg/openbox
+%{_sysconfdir}/xdg/openbox/*.xml
 %{_wmpropsdir}/openbox.desktop
 
 %files devel
@@ -108,3 +181,37 @@ echo
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_pixmapsdir}/openbox.png
 %{_pkgconfigdir}/*.pc
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/lib*.a
+
+%files themes-Allegro
+%defattr(644,root,root,755)
+%dir %{_datadir}/themes/Allegro
+%dir %{_datadir}/themes/Allegro/openbox-3
+%{_datadir}/themes/Allegro/openbox-3/*
+
+%files themes-Artwiz
+%defattr(644,root,root,755)
+%dir %{_datadir}/themes/Artwiz
+%dir %{_datadir}/themes/Artwiz/openbox-3
+%{_datadir}/themes/Artwiz/openbox-3/*
+
+%files themes-Blah41
+%defattr(644,root,root,755)
+%dir %{_datadir}/themes/Blah41
+%dir %{_datadir}/themes/Blah41/openbox-3
+%{_datadir}/themes/Blah41/openbox-3/*
+
+%files themes-Om4Ob
+%defattr(644,root,root,755)
+%dir %{_datadir}/themes/Om4Ob
+%dir %{_datadir}/themes/Om4Ob/openbox-3
+%{_datadir}/themes/Om4Ob/openbox-3/*
+
+%files themes-TheBear
+%defattr(644,root,root,755)
+%dir %{_datadir}/themes/TheBear
+%dir %{_datadir}/themes/TheBear/openbox-3
+%{_datadir}/themes/TheBear/openbox-3/*
