@@ -15,6 +15,7 @@ Patch1:		%{name}-gcc_3.3_fix.patch
 Patch2:		%{name}-nls-codeset.patch
 URL:		http://icculus.org/openbox/
 BuildRequires:	XFree86-devel
+BuildRequires:	XFree86-xrender-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
