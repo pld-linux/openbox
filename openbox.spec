@@ -5,7 +5,7 @@ Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
 Version:	3.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
@@ -28,6 +28,7 @@ BuildRequires:	startup-notification-devel
 BuildRequires:	xft-devel >= 2.1.2-6
 Requires(post):	/sbin/ldconfig
 Requires:	openbox-theme-base = %{epoch}:%{version}-%{release}
+Provides:	gnome-wm
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_wmpropsdir	/usr/share/wm-properties
