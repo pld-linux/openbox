@@ -42,16 +42,16 @@ Openbox3 jest ca³kowicie nowym zarz±dc± okien i nie bazuje ju¿ na
 kodzie wcze¶niejszych wersji. Jego g³ównymi celami s± wsparcie i zgodno¶æ
 ze standardami oraz inteligentne zarz±dzanie oknami.
 
-%package	devel
-Summary:	Development header files
-Summary(pl):	Pliki nag³ówkowe
+%package devel
+Summary:	Header files for openbox
+Summary(pl):	Pliki nag³ówkowe openbox
 Group:		Development/Libraries
-Requires:	openbox = %{name}-%{version}-%{_beta}
+Requires:	%{name} = %{version}-%{release}
 
-%description	devel
+%description devel
 Development header files for writing applications based on openbox.
 
-%description	devel -l pl
+%description devel -l pl
 Pliki nag³ówkowe do tworzenia oprogramowania opartego o openbox.
 
 %prep
@@ -69,6 +69,7 @@ rm -f missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	desktopfilesdir=%{_wmpropsdir}
@@ -91,14 +92,16 @@ echo
 %defattr(644,root,root,755)
 %doc README* ChangeLog TODO
 %attr(755,root,root) %{_bindir}/*
-%dir %{_datadir}/openbox
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%dir %{_datadir}/openbox
 %{_datadir}/openbox/*.xml
 %{_datadir}/openbox/themes
 %{_wmpropsdir}/openbox.desktop
 
 %files devel
 %defattr(644,root,root,755)
+%dir %{_includedir}/openbox
+%dir %{_includedir}/openbox/3.0
 %dir %{_includedir}/openbox/3.0/openbox
 %{_includedir}/openbox/3.0/openbox/*.h
 %{_pkgconfigdir}/*.pc
