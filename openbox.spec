@@ -1,13 +1,11 @@
 # TODO:
 # - better description
-# - prepare it to working with GNOME as a replacement for
-#   metacity
 #
 Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
 Version:	3.0
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
@@ -15,6 +13,7 @@ Vendor:		Ben Jansens (ben@orodu.net)
 Source0:	http://openbox.org/releases/%{name}-%{version}.tar.gz
 # Source0-md5:	61074775106004b0add30dcaaf85a759
 Source1:	%{name}-xsession.desktop
+Patch0:		%{name}-post_3_fixes.patch
 URL:		http://openbox.org/
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
@@ -131,6 +130,7 @@ Motyw TheBear dla openboxa.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 rm -f missing
