@@ -12,15 +12,16 @@ Source0:	%{name}-%{_snap}.tar.bz2
 # Source0-md5:	c9a04288cc9c807b2d6d6d0c6f5c1707
 Patch0:		%{name}-paths.patch
 Patch1:		%{name}-gcc_3.3_fix.patch
+Patch2:		%{name}-nls-codeset.patch
 URL:		http://icculus.org/openbox/
 BuildRequires:	XFree86-devel
-BuildRequires:	Xft-devel >= 2.0
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
 BuildRequires:	fontconfig-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	pkgconfig
+BuildRequires:	xft-devel >= 2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/X11/%{name}
@@ -37,6 +38,7 @@ na wielu platformach systemowych.
 %setup -q -n %{name}-%{_snap}
 %patch0 -p1
 %patch1 -p0
+%patch2 -p1
 
 %build
 rm -f missing
