@@ -8,7 +8,7 @@ Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
 Version:	3.0
 %define         _beta	beta2
-Release:	0.%{_beta}.1
+Release:	0.%{_beta}.2
 License:	GPL
 Group:		X11/Window Managers
 Vendor:		Ben Jansens (ben@orodu.net)
@@ -104,4 +104,5 @@ echo
 %dir %{_includedir}/openbox/3.0
 %dir %{_includedir}/openbox/3.0/openbox
 %{_includedir}/openbox/3.0/openbox/*.h
+%attr(755,root,root) %{_libdir}/lib*.so
 %{_pkgconfigdir}/*.pc
