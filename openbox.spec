@@ -10,7 +10,7 @@ Group:		X11/Window Managers
 #Source0:	http://icculus.org/openbox/releases/%{name}-%{version}.tar.gz
 Source0:	%{name}-%{_snap}.tar.bz2
 Patch0:		%{name}-paths.patch
-URL:		http://icullus.org/openbox/
+URL:		http://icculus.org/openbox/
 BuildRequires:	XFree86-devel
 BuildRequires:	Xft-devel >= 2.0
 BuildRequires:	autoconf
@@ -70,7 +70,7 @@ echo
 %dir %{_datadir}/openbox
 %{_datadir}/openbox/buttons
 %{_datadir}/openbox/styles
-%dir %{_datadir}/nls
+%dir %{_datadir}/openbox/nls
 %{_datadir}/openbox/nls/C
 %lang(da) %{_datadir}/openbox/nls/da_DK
 %lang(de) %{_datadir}/openbox/nls/de_DE
