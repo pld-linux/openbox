@@ -1,0 +1,16 @@
+Index: util/epist/keytree.cc
+===================================================================
+RCS file: /cvs/cvsroot/openbox/util/epist/Attic/keytree.cc,v
+retrieving revision 1.11.8.1
+diff -p -u -r1.11.8.1 keytree.cc
+--- util/epist/keytree.cc	2002/11/01 01:54:02	1.11.8.1
++++ util/epist/keytree.cc	2003/05/18 09:31:57
+@@ -30,6 +30,7 @@
+ 
+ #include <string>
+ #include <iostream>
++#include <assert.h>
+ 
+ using std::string;
+ 
+
