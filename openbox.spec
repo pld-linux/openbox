@@ -2,13 +2,13 @@
 # - better description
 # - prepare it to working with GNOME as a replacement for
 #   metacity
-
+#
 Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
 Version:	3.0
 %define		_beta	beta6
-Release:	1.%{_beta}.0
+Release:	2.%{_beta}.0
 License:	GPL
 Group:		X11/Window Managers
 Vendor:		Ben Jansens (ben@orodu.net)
@@ -170,6 +170,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/openbox
 %{_datadir}/openbox/*
 %{_datadir}/xsessions/openbox.desktop
+%{_pixmapsdir}/openbox.png
 %dir %{_sysconfdir}/xdg/openbox
 %{_sysconfdir}/xdg/openbox/*.xml
 %{_wmpropsdir}/openbox.desktop
@@ -181,7 +182,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_includedir}/openbox/3.0/openbox
 %{_includedir}/openbox/3.0/openbox/*.h
 %attr(755,root,root) %{_libdir}/lib*.so
-%{_pixmapsdir}/openbox.png
 %{_pkgconfigdir}/*.pc
 
 %files static
