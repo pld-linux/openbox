@@ -2,11 +2,7 @@
 # - need to put rc3 file in a right place (FHS)
 # - better description
 #
-# Conditional build (disabled for now)
-# _with_obconf          - with openbox configuration utility
-#                         (doesn't work yet)
-#
-%define         _alpha  alpha2
+%define         _alpha  alpha3
 Summary:        Small and fast window manger for the X Window
 Summary(pl):    Ma³y i szybki zarz±dca okien dla X Window
 Name:           openbox
@@ -16,7 +12,7 @@ License:        GPL
 Group:          X11/Window Managers
 Vendor:         Ben Jansens (ben@orodu.net)
 Source0:        http://openbox.org/releases/%{name}-%{version}-%{_alpha}.tar.gz
-# Source0-md5:	51913da13fad5c7950618d89a9d940ba
+# Source0-md5:	1ad49346b5132dc9867e9611aebd5066
 URL:            http://openbox.org/
 BuildRequires:  XFree86-devel
 BuildRequires:  autoconf
@@ -25,7 +21,7 @@ BuildRequires:  bison
 BuildRequires:  flex
 BuildRequires:  gettext-autopoint
 BuildRequires:  gtk+2-devel
-#%{?_with_obconf:BuildRequires:  libglade2-devel}
+BuildRequires:  libglade2-devel
 BuildRequires:  libtool
 BuildRequires:  pkgconfig
 BuildRequires:  startup-notification-devel
@@ -85,8 +81,7 @@ echo
 %files
 %defattr(644,root,root,755)
 %doc README* ChangeLog TODO
-%attr(755,root,root) %{_bindir}/%{name}
-#%{?_with_obconf:%attr(755,root,root) %{_bindir}/obconf}
+%attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/openbox
 %dir %{_libdir}/openbox/plugins
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
