@@ -1,6 +1,6 @@
 %define		_snap 20030505
 
-Summary:	Very small and fast window manger for the X Window
+Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
 Version:	2.3.1
@@ -28,11 +28,19 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Openbox is a window manager for the X11 windowing system. It currently
-runs on a large list of platforms.
+runs on a large list of platforms. It was originally based on Blackbox
+and currently remains very similar, even using Blackbox styles for its
+themeing. Openbox has fairly complete support for the NetWM X11 Spec.
+Openbox is therefore compatible with desktop environments, such as
+KDE 3 and Gnome 2.
+
 
 %description -l pl
 Openbox jest zarz±dc± okien dla systemu X11. W chwili obecnej pracuje
-na wielu platformach systemowych.
+na wielu platformach systemowych. Pierwotnie by³ on oparty o Blackbox'a
+i aktulnie przypomina go u¿ywaj±c nawet styli Blackbox'a jako
+w³asnych. Openbox ma prawie kompletne wsparcie dla specyfikacji NetWM
+X11 Spec. Dlatego te¿ jest zgodny ze ¶rodowiskami jak KDE 3 i GNOME 2.
 
 %prep
 %setup -q -n %{name}-%{_snap}
@@ -60,7 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 echo
-echo "Remember to copy from /etc/X11/openbox menu and epistrc "
+echo "Remember to copy from /etc/X11/openbox menu and epistrc files"
 echo "to your ~/.openbox dir. menu file should contain only"
 echo "UTF-8 characters!"
 echo
