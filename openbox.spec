@@ -4,16 +4,15 @@
 Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
-Version:	3.0
-Release:	2
+Version:	3.1
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
 Vendor:		Ben Jansens (ben@orodu.net)
 Source0:	http://openbox.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	61074775106004b0add30dcaaf85a759
+# Source0-md5:	3152631bb8c892b919129e2a58978aad
 Source1:	%{name}-xsession.desktop
-Patch0:		%{name}-post_3_fixes.patch
 URL:		http://openbox.org/
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
@@ -26,7 +25,7 @@ BuildRequires:	libglade2-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	startup-notification-devel
-BuildRequires:	xft-devel >= 2.0
+BuildRequires:	xft-devel >= 2.1.2-6
 Requires(post):	/sbin/ldconfig
 Requires:	openbox-theme-base = %{epoch}:%{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -130,7 +129,6 @@ Motyw TheBear dla openboxa.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 rm -f missing
@@ -155,7 +153,10 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsessions/openbox.desktop
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 
-#%%find_lang %{name} --all-name
+# no idea what to do with it...
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/en@*
+
+%find_lang %{name} --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -164,8 +165,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %postun -p /sbin/ldconfig
 
-#%%files -f %{name}.lang
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc CHANGELOG README TODO
 %attr(755,root,root) %{_bindir}/*
