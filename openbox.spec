@@ -64,20 +64,23 @@ rm -f missing
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-        DESTDIR=$RPM_BUILD_ROOT \
-        desktopfilesdir=%{_wmpropsdir}
+	DESTDIR=$RPM_BUILD_ROOT \
+	desktopfilesdir=%{_wmpropsdir}
+
+rm -f $RPM_BUILD_ROOT%{_libdir}/openbox/plugins/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post  -p /sbin/ldconfig
+%post
+/sbin/ldconfig
 echo
 echo "Remember to copy from /usr/share/openbox rc3 file"
 echo "to your ~/.openbox dir. rc3 should contain only"
 echo "UTF-8 characters!"
 echo
 
-%preun -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
@@ -86,7 +89,7 @@ echo
 %{?_with_obconf:%attr(755,root,root) %{_bindir}/obconf}
 %dir %{_datadir}/openbox
 %dir %{_libdir}/openbox/plugins
-%attr(755,root,root) %{_libdir}/*.so.*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %attr(755,root,root) %{_libdir}/openbox/plugins/*.so
 %{_datadir}/openbox/rc3
 %{_datadir}/openbox/themes
