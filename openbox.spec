@@ -2,8 +2,7 @@
 # - better description
 # - prepare it to working with GNOME as a replacement for
 #   metacity
-# - solve /etc/xdg problem
-#
+
 Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
@@ -30,7 +29,6 @@ BuildRequires:	pkgconfig
 BuildRequires:	startup-notification-devel
 BuildRequires:	xft-devel >= 2.0
 Requires(post):	/sbin/ldconfig
-Requires:	applnk
 Requires:	openbox-theme-base = %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
