@@ -3,17 +3,17 @@
 #   (but first in beta stage)
 # - better description
 #
-%define         _alpha  alpha8
 Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
 Version:	3.0
-Release:	0.%{_alpha}.1
+%define         _beta	beta2
+Release:	0.%{_beta}.1
 License:	GPL
 Group:		X11/Window Managers
 Vendor:		Ben Jansens (ben@orodu.net)
-Source0:	http://openbox.org/releases/%{name}-%{version}-%{_alpha}.tar.gz
-# Source0-md5:	af0efee91aaf9801b37eb6dac830fe07
+Source0:	http://openbox.org/releases/%{name}-%{version}-%{_beta}.tar.gz
+# Source0-md5:	87cc1be429cbadbc55ba1ed15f7ae59a
 URL:		http://openbox.org/
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
@@ -28,7 +28,6 @@ BuildRequires:	pkgconfig
 BuildRequires:	startup-notification-devel
 BuildRequires:	xft-devel >= 2.0
 Requires(post):	/sbin/ldconfig
-Obsoletes:	openbox < 3.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_wmpropsdir	/usr/share/wm-properties
@@ -44,7 +43,7 @@ kodzie wcze¶niejszych wersji. Jego g³ównymi celami s± wsparcie i zgodno¶æ
 ze standardami oraz inteligentne zarz±dzanie oknami.
 
 %prep
-%setup -q -n %{name}-%{version}-%{_alpha}
+%setup -q -n %{name}-%{version}-%{_beta}
 
 %build
 rm -f missing
@@ -54,12 +53,10 @@ rm -f missing
 %{__autoconf}
 %{__automake}
 %configure
-
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	desktopfilesdir=%{_wmpropsdir}
