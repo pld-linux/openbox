@@ -2,18 +2,19 @@
 # - need to put rc.xml file in a right place (FHS)
 #   (but first in beta stage)
 # - better description
+# - static lib (?)
 #
 Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
 Version:	3.0
-%define         _beta	beta2
-Release:	0.%{_beta}.2
+%define         _beta	beta3
+Release:	0.%{_beta}.1
 License:	GPL
 Group:		X11/Window Managers
 Vendor:		Ben Jansens (ben@orodu.net)
 Source0:	http://openbox.org/releases/%{name}-%{version}-%{_beta}.tar.gz
-# Source0-md5:	87cc1be429cbadbc55ba1ed15f7ae59a
+# Source0-md5:	bf8bc82b56568b6cd30575e9fc1874fa
 URL:		http://openbox.org/
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
@@ -105,4 +106,5 @@ echo
 %dir %{_includedir}/openbox/3.0/openbox
 %{_includedir}/openbox/3.0/openbox/*.h
 %attr(755,root,root) %{_libdir}/lib*.so
+%{_pixmapsdir}/openbox.png
 %{_pkgconfigdir}/*.pc
