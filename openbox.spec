@@ -1,5 +1,5 @@
 # TODO:
-# - need to put rc3 and menu files in a right place (FHS)
+# - need to put rc.xml file in a right place (FHS)
 #   (but first in beta stage)
 # - better description
 #
@@ -41,6 +41,18 @@ support/compliance, and intelligent window management.
 Openbox3 jest ca³kowicie nowym zarz±dc± okien i nie bazuje ju¿ na
 kodzie wcze¶niejszych wersji. Jego g³ównymi celami s± wsparcie i zgodno¶æ
 ze standardami oraz inteligentne zarz±dzanie oknami.
+
+%package	devel
+Summary:	Development header files
+Summary(pl):	Pliki nag³ówkowe
+Group:		Development/Libraries
+Requires:	openbox = %{name}-%{version}-%{_beta}
+
+%description	devel
+Development header files for writing applications based on openbox.
+
+%description	devel -l pl
+Pliki nag³ówkowe do tworzenia oprogramowania opartego o openbox.
 
 %prep
 %setup -q -n %{name}-%{version}-%{_beta}
@@ -84,3 +96,9 @@ echo
 %{_datadir}/openbox/*.xml
 %{_datadir}/openbox/themes
 %{_wmpropsdir}/openbox.desktop
+
+%files devel
+%defattr(644,root,root,755)
+%dir %{_includedir}/openbox/3.0/openbox
+%{_includedir}/openbox/3.0/openbox/*.h
+%{_pkgconfigdir}/*.pc
