@@ -7,14 +7,14 @@ Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
 Version:	3.0
-%define		_rc	rc3
+%define		_rc	rc4
 Release:	0.%{_rc}.1
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
 Vendor:		Ben Jansens (ben@orodu.net)
 Source0:	http://openbox.org/releases/%{name}-%{version}-%{_rc}.tar.gz
-# Source0-md5:	07b529351852006e8485a0f8e8471ea1
+# Source0-md5:	129a2083e2d45effee007d96f33e1968
 Source1:	%{name}-xsession.desktop
 URL:		http://openbox.org/
 BuildRequires:	XFree86-devel
@@ -156,6 +156,8 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsessions/openbox.desktop
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 
+#%%find_lang %{name} --all-name
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -163,6 +165,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %postun -p /sbin/ldconfig
 
+#%%files -f %{name}.lang
 %files
 %defattr(644,root,root,755)
 %doc CHANGELOG README TODO
