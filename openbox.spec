@@ -17,7 +17,7 @@ Group:          X11/Window Managers
 Vendor:         Ben Jansens (ben@orodu.net)
 Source0:        http://openbox.org/releases/%{name}-%{version}-%{_alpha}.tar.gz
 # Source0-md5:	9dbb15ca622ad6fb1084383d3ab455b4
-URL:            http://openbox.org/3/
+URL:            http://openbox.org/
 BuildRequires:  XFree86-devel
 BuildRequires:  autoconf
 BuildRequires:  automake
