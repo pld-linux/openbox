@@ -14,6 +14,7 @@ Group:		X11/Window Managers
 Vendor:		Ben Jansens (ben@orodu.net)
 Source0:	http://openbox.org/releases/%{name}-%{version}-%{_beta}.tar.gz
 # Source0-md5:	7410dce685227a876b8e19915fc36872
+Source1:	%{name}-xsession.desktop
 URL:		http://openbox.org/
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
@@ -149,13 +150,16 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	desktopfilesdir=%{_wmpropsdir}
 
+# gdm/kdm support
+install -d $RPM_BUILD_ROOT%{_datadir}/xsessions
+install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsessions/openbox.desktop
+
 rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-/sbin/ldconfig
+%post	-p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
 
@@ -166,6 +170,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %dir %{_datadir}/openbox
 %{_datadir}/openbox/*
+%{_datadir}/xsessions/openbox.desktop
 %dir %{_sysconfdir}/xdg/openbox
 %{_sysconfdir}/xdg/openbox/*.xml
 %{_wmpropsdir}/openbox.desktop
