@@ -7,13 +7,13 @@ Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
 Version:	3.0
-%define		_beta	beta6
-Release:	2.%{_beta}.0
+%define		_rc	rc1
+Release:	1.%{_rc}.0
 License:	GPL
 Group:		X11/Window Managers
 Vendor:		Ben Jansens (ben@orodu.net)
-Source0:	http://openbox.org/releases/%{name}-%{version}-%{_beta}.tar.gz
-# Source0-md5:	32140b1abf3d0e8701217e6a788aa075
+Source0:	http://openbox.org/releases/%{name}-%{version}-%{_rc}.tar.gz
+# Source0-md5:	4ecd556b5422c059374e043ccda01243
 Source1:	%{name}-xsession.desktop
 URL:		http://openbox.org/
 BuildRequires:	XFree86-devel
@@ -130,7 +130,7 @@ TheBear theme for openbox.
 Motyw TheBear dla openboxa.
 
 %prep
-%setup -q -n %{name}-%{version}-%{_beta}
+%setup -q -n %{name}-%{version}-%{_rc}
 
 %build
 rm -f missing
