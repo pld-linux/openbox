@@ -2,18 +2,19 @@
 # - better description
 # - prepare it to working with GNOME as a replacement for
 #   metacity
+# - solve /etc/xdg problem
 #
 Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
 Version:	3.0
-%define         _beta	beta5
+%define         _beta	beta6
 Release:	1.%{_beta}.0
 License:	GPL
 Group:		X11/Window Managers
 Vendor:		Ben Jansens (ben@orodu.net)
 Source0:	http://openbox.org/releases/%{name}-%{version}-%{_beta}.tar.gz
-# Source0-md5:	7410dce685227a876b8e19915fc36872
+# Source0-md5:	32140b1abf3d0e8701217e6a788aa075
 Source1:	%{name}-xsession.desktop
 URL:		http://openbox.org/
 BuildRequires:	XFree86-devel
@@ -165,7 +166,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README* ChangeLog TODO
+%doc CHANGELOG README TODO
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %dir %{_datadir}/openbox
