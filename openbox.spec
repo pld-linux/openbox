@@ -3,7 +3,7 @@ Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
 Version:	3.3
-Release:	0.%{_rc}.1
+Release:	0.%{_rc}.2
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
@@ -22,9 +22,10 @@ BuildRequires:	gtk+2-devel
 BuildRequires:	libglade2-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	startup-notification-devel
 BuildRequires:	xft-devel >= 2.1.2-6
-Requires(post):	/sbin/ldconfig
+Requires(post,postun):	/sbin/ldconfig
 Requires:	openbox-theme-base = %{epoch}:%{version}-%{release}
 Provides:	gnome-wm
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -130,7 +131,6 @@ Motyw TheBear dla openboxa.
 %setup -qn %{name}-%{version}-%{_rc}
 
 %build
-rm -f missing
 %{__autopoint}
 %{__libtoolize}
 %{__aclocal} -I m4
@@ -160,9 +160,11 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/en@*
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
+%post
+%ldconfig_post
 
-%postun -p /sbin/ldconfig
+%postun
+%ldconfig_postun
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
