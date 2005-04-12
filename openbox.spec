@@ -25,7 +25,6 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	startup-notification-devel
 BuildRequires:	xft-devel >= 2.1.2-6
-Requires(post,postun):	/sbin/ldconfig
 Requires:	openbox-theme-base = %{epoch}:%{version}-%{release}
 Provides:	gnome-wm
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
