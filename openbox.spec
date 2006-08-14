@@ -1,31 +1,35 @@
-%define		_rc rc2
+#
+%define		_snap 20070814
+#
 Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
 Version:	3.3
-Release:	0.%{_rc}.1
+Release:	0.%{_snap}.1
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
-Vendor:		Ben Jansens (ben@orodu.net)
-Source0:	http://openbox.org/releases/%{name}-%{version}-%{_rc}.tar.gz
+#Source0:	http://openbox.org/releases/%{name}-%{version}-%{_rc}.tar.gz
+Source0:	%{name}-%{version}-%{_snap}.tar.bz2
 # Source0-md5:	1ff100d27cc1f47dadebb884a696dac3
 Source1:	%{name}-xsession.desktop
 URL:		http://openbox.org/
-BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	gettext-autopoint >= 0.12.1
-BuildRequires:	gtk+2-devel
-BuildRequires:	libglade2-devel
 BuildRequires:	libtool
+BuildRequires:	libxml2-devel >= 1:2.6.26
+BuildRequires:	pango-devel >= 1.14.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	startup-notification-devel
-BuildRequires:	xft-devel >= 2.1.2-6
-Requires:	openbox-theme-base = %{epoch}:%{version}-%{release}
+BuildRequires:	xorg-lib-libSM-devel
+BuildRequires:	xorg-lib-libXinerama-devel
+BuildRequires:	xorg-lib-libXrandr-devel
+Requires:	%{name}-libs = %{epoch}:%{version}-%{release}
+Requires:	%{name}-theme-base = %{epoch}:%{version}-%{release}
 Provides:	gnome-wm
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -45,7 +49,7 @@ ze standardami oraz inteligentne zarz±dzanie oknami.
 Summary:	Header files for openbox
 Summary(pl):	Pliki nag³ówkowe openbox
 Group:		Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{name}-libs = %{epoch}:%{version}-%{release}
 
 %description devel
 Development header files for writing applications based on openbox.
@@ -64,6 +68,17 @@ Static openbox library.
 
 %description static -l pl
 Statyczna biblioteka openbox.
+
+%package libs
+Summary:	openbox libraries
+Summary(pl):	biblioteki openboxa
+Group:		Libraries
+
+%description libs
+openbox libraries.
+
+%description libs -l pl
+Biblioteka openboxa.
 
 %package themes-Allegro
 Summary:	Allegro theme for openbox
@@ -127,7 +142,7 @@ TheBear theme for openbox.
 Motyw TheBear dla openboxa.
 
 %prep
-%setup -qn %{name}-%{version}-%{_rc}
+%setup -q
 
 %build
 %{__autopoint}
@@ -150,23 +165,20 @@ install -d $RPM_BUILD_ROOT%{_datadir}/xsessions
 install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsessions/openbox.desktop
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
-
-# no idea what to do with it...
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/en@*
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 %find_lang %{name} --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
+%post	libs -p /sbin/ldconfig
+%postun	libs -p /sbin/ldconfig
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc CHANGELOG COMPLIANCE README
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %dir %{_datadir}/openbox
 %{_datadir}/openbox/*
 %{_datadir}/xsessions/openbox.desktop
@@ -174,6 +186,10 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_sysconfdir}/xdg/openbox
 %{_sysconfdir}/xdg/openbox/*.xml
 %{_wmpropsdir}/openbox.desktop
+
+%files libs
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
