@@ -11,7 +11,7 @@ License:	GPL
 Group:		X11/Window Managers
 #Source0:	http://openbox.org/releases/%{name}-%{version}-%{_rc}.tar.gz
 Source0:	%{name}-%{version}-%{_snap}.tar.bz2
-# Source0-md5:	1ff100d27cc1f47dadebb884a696dac3
+# Source0-md5:	3e1aec113675454aca33e24d5ed10980
 Source1:	%{name}-xsession.desktop
 URL:		http://openbox.org/
 BuildRequires:	autoconf
