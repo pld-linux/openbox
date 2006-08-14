@@ -71,14 +71,14 @@ Statyczna biblioteka openbox.
 
 %package libs
 Summary:	openbox libraries
-Summary(pl):	biblioteki openboxa
+Summary(pl):	Biblioteki openboxa
 Group:		Libraries
 
 %description libs
 openbox libraries.
 
 %description libs -l pl
-Biblioteka openboxa.
+Biblioteki openboxa.
 
 %package themes-Allegro
 Summary:	Allegro theme for openbox
