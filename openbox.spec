@@ -1,17 +1,17 @@
 #
-%define		_snap 20070814
+%define		_snap 20060814
 #
 Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
 Version:	3.3
-Release:	0.%{_snap}.1
+Release:	1.%{_snap}.1
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
 #Source0:	http://openbox.org/releases/%{name}-%{version}-%{_rc}.tar.gz
 Source0:	%{name}-%{version}-%{_snap}.tar.bz2
-# Source0-md5:	3e1aec113675454aca33e24d5ed10980
+# Source0-md5:	a38a725d935ba0768c06f1382712c88c
 Source1:	%{name}-xsession.desktop
 URL:		http://openbox.org/
 BuildRequires:	autoconf
