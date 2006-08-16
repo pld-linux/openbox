@@ -45,6 +45,17 @@ Openbox3 jest ca³kowicie nowym zarz±dc± okien i nie bazuje ju¿ na
 kodzie wcze¶niejszych wersji. Jego g³ównymi celami s± wsparcie i zgodno¶æ
 ze standardami oraz inteligentne zarz±dzanie oknami.
 
+%package libs
+Summary:	openbox libraries
+Summary(pl):	Biblioteki openboksa
+Group:		Libraries
+
+%description libs
+openbox libraries.
+
+%description libs -l pl
+Biblioteki openboksa.
+
 %package devel
 Summary:	Header files for openbox
 Summary(pl):	Pliki nag³ówkowe openbox
@@ -68,17 +79,6 @@ Static openbox library.
 
 %description static -l pl
 Statyczna biblioteka openbox.
-
-%package libs
-Summary:	openbox libraries
-Summary(pl):	Biblioteki openboxa
-Group:		Libraries
-
-%description libs
-openbox libraries.
-
-%description libs -l pl
-Biblioteki openboxa.
 
 %package themes-Allegro
 Summary:	Allegro theme for openbox
