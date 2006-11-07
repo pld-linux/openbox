@@ -1,17 +1,20 @@
-#
-%define		_snap 20060814
-#
+
+# todo:
+# - update themes
+#   - obsolete old ones
+#   - subpackages for new ones
+# - l10n files listed twice
+
 Summary:	Small and fast window manger for the X Window
 Summary(pl):	Ma³y i szybki zarz±dca okien dla X Window
 Name:		openbox
-Version:	3.3
-Release:	1.%{_snap}.1
+Version:	3.3.1
+Release:	0.1
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
-#Source0:	http://openbox.org/releases/%{name}-%{version}-%{_rc}.tar.gz
-Source0:	%{name}-%{version}-%{_snap}.tar.bz2
-# Source0-md5:	a38a725d935ba0768c06f1382712c88c
+Source0:	http://openbox.org/releases/%{name}-%{version}.tar.gz
+# Source0-md5:	6dc25d5fbff5d6277593b89974f950d8
 Source1:	%{name}-xsession.desktop
 URL:		http://openbox.org/
 BuildRequires:	autoconf
@@ -128,18 +131,19 @@ Om4Ob theme for openbox.
 %description themes-Om4Ob -l pl
 Motyw Om4Ob dla openboxa.
 
-%package themes-TheBear
-Summary:	TheBear theme for openbox
-Summary(pl):	Motyw TheBear dla openboxa
+%package themes-bear
+Summary:	Bear theme for openbox
+Summary(pl):	Motyw Bear dla openboxa
 Group:		Themes
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	openbox-theme-base = %{epoch}:%{version}-%{release}
+Obsoletes:	openbox-themes-TheBear
 
-%description themes-TheBear
-TheBear theme for openbox.
+%description themes-bear
+Bear theme for openbox.
 
-%description themes-Allegro -l pl
-Motyw TheBear dla openboxa.
+%description themes-bear -l pl
+Motyw Bear dla openboxa.
 
 %prep
 %setup -q
@@ -204,32 +208,32 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
 
-%files themes-Allegro
-%defattr(644,root,root,755)
-%dir %{_datadir}/themes/Allegro
-%dir %{_datadir}/themes/Allegro/openbox-3
-%{_datadir}/themes/Allegro/openbox-3/*
+#%files themes-Allegro
+#%defattr(644,root,root,755)
+#%dir %{_datadir}/themes/Allegro
+#%dir %{_datadir}/themes/Allegro/openbox-3
+#%{_datadir}/themes/Allegro/openbox-3/*
 
-%files themes-Artwiz
-%defattr(644,root,root,755)
-%dir %{_datadir}/themes/Artwiz
-%dir %{_datadir}/themes/Artwiz/openbox-3
-%{_datadir}/themes/Artwiz/openbox-3/*
+#%files themes-Artwiz
+#%defattr(644,root,root,755)
+#%dir %{_datadir}/themes/Artwiz
+#%dir %{_datadir}/themes/Artwiz/openbox-3
+#%{_datadir}/themes/Artwiz/openbox-3/*
 
-%files themes-Blah41
-%defattr(644,root,root,755)
-%dir %{_datadir}/themes/Blah41
-%dir %{_datadir}/themes/Blah41/openbox-3
-%{_datadir}/themes/Blah41/openbox-3/*
+#%files themes-Blah41
+#%defattr(644,root,root,755)
+#%dir %{_datadir}/themes/Blah41
+#%dir %{_datadir}/themes/Blah41/openbox-3
+#%{_datadir}/themes/Blah41/openbox-3/*
 
-%files themes-Om4Ob
-%defattr(644,root,root,755)
-%dir %{_datadir}/themes/Om4Ob
-%dir %{_datadir}/themes/Om4Ob/openbox-3
-%{_datadir}/themes/Om4Ob/openbox-3/*
+#%files themes-Om4Ob
+#%defattr(644,root,root,755)
+#%dir %{_datadir}/themes/Om4Ob
+#%dir %{_datadir}/themes/Om4Ob/openbox-3
+#%{_datadir}/themes/Om4Ob/openbox-3/*
 
-%files themes-TheBear
+%files themes-bear
 %defattr(644,root,root,755)
-%dir %{_datadir}/themes/TheBear
-%dir %{_datadir}/themes/TheBear/openbox-3
-%{_datadir}/themes/TheBear/openbox-3/*
+%dir %{_datadir}/themes/bear2
+%dir %{_datadir}/themes/bear2/openbox-3
+%{_datadir}/themes/bear2/openbox-3/*
