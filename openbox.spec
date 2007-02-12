@@ -6,7 +6,7 @@
 # - l10n files listed twice
 
 Summary:	Small and fast window manger for the X Window
-Summary(pl):	Ma≥y i szybki zarz±dca okien dla X Window
+Summary(pl.UTF-8):   Ma≈Çy i szybki zarzƒÖdca okien dla X Window
 Name:		openbox
 Version:	3.3.1
 Release:	0.1
@@ -43,97 +43,97 @@ Openbox3 is a completely new window manager, and is not based upon any
 previous window manager code-base. Its primary goals are standards
 support/compliance, and intelligent window management.
 
-%description -l pl
-Openbox3 jest ca≥kowicie nowym zarz±dc± okien i nie bazuje juø na
-kodzie wcze∂niejszych wersji. Jego g≥Ûwnymi celami s± wsparcie i zgodno∂Ê
-ze standardami oraz inteligentne zarz±dzanie oknami.
+%description -l pl.UTF-8
+Openbox3 jest ca≈Çkowicie nowym zarzƒÖdcƒÖ okien i nie bazuje ju≈º na
+kodzie wcze≈õniejszych wersji. Jego g≈Ç√≥wnymi celami sƒÖ wsparcie i zgodno≈õƒá
+ze standardami oraz inteligentne zarzƒÖdzanie oknami.
 
 %package libs
 Summary:	openbox libraries
-Summary(pl):	Biblioteki openboksa
+Summary(pl.UTF-8):   Biblioteki openboksa
 Group:		Libraries
 
 %description libs
 openbox libraries.
 
-%description libs -l pl
+%description libs -l pl.UTF-8
 Biblioteki openboksa.
 
 %package devel
 Summary:	Header files for openbox
-Summary(pl):	Pliki nag≥Ûwkowe openbox
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe openbox
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{epoch}:%{version}-%{release}
 
 %description devel
 Development header files for writing applications based on openbox.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe do tworzenia oprogramowania opartego o openbox.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe do tworzenia oprogramowania opartego o openbox.
 
 %package static
 Summary:	Static openbox library
-Summary(pl):	Statyczna biblioteka openbox
+Summary(pl.UTF-8):   Statyczna biblioteka openbox
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 Static openbox library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka openbox.
 
 %package themes-Allegro
 Summary:	Allegro theme for openbox
-Summary(pl):	Motyw Allegro dla openboxa
+Summary(pl.UTF-8):   Motyw Allegro dla openboxa
 Group:		Themes
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description themes-Allegro
 Allegro theme for openbox.
 
-%description themes-Allegro -l pl
+%description themes-Allegro -l pl.UTF-8
 Motyw Allegro dla openboxa.
 
 %package themes-Artwiz
 Summary:	Artwiz theme for openbox
-Summary(pl):	Motyw Artwiz dla openboxa
+Summary(pl.UTF-8):   Motyw Artwiz dla openboxa
 Group:		Themes
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description themes-Artwiz
 Artwiz theme for openbox.
 
-%description themes-Artwiz -l pl
+%description themes-Artwiz -l pl.UTF-8
 Motyw Artwiz dla openboxa.
 
 %package themes-Blah41
 Summary:	Blah41 theme for openbox
-Summary(pl):	Motyw Blah41 dla openboxa
+Summary(pl.UTF-8):   Motyw Blah41 dla openboxa
 Group:		Themes
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description themes-Blah41
 Blah41 theme for openbox.
 
-%description themes-Allegro -l pl
+%description themes-Allegro -l pl.UTF-8
 Motyw Blah41 dla openboxa.
 
 %package themes-Om4Ob
 Summary:	Om4Ob theme for openbox
-Summary(pl):	Motyw Om4Ob dla openboxa
+Summary(pl.UTF-8):   Motyw Om4Ob dla openboxa
 Group:		Themes
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description themes-Om4Ob
 Om4Ob theme for openbox.
 
-%description themes-Om4Ob -l pl
+%description themes-Om4Ob -l pl.UTF-8
 Motyw Om4Ob dla openboxa.
 
 %package themes-bear
 Summary:	Bear theme for openbox
-Summary(pl):	Motyw Bear dla openboxa
+Summary(pl.UTF-8):   Motyw Bear dla openboxa
 Group:		Themes
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	openbox-theme-base = %{epoch}:%{version}-%{release}
@@ -142,7 +142,7 @@ Obsoletes:	openbox-themes-TheBear
 %description themes-bear
 Bear theme for openbox.
 
-%description themes-bear -l pl
+%description themes-bear -l pl.UTF-8
 Motyw Bear dla openboxa.
 
 %prep
