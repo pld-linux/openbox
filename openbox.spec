@@ -6,7 +6,7 @@
 # - l10n files listed twice
 
 Summary:	Small and fast window manger for the X Window
-Summary(pl.UTF-8):   Mały i szybki zarządca okien dla X Window
+Summary(pl.UTF-8):	Mały i szybki zarządca okien dla X Window
 Name:		openbox
 Version:	3.3.1
 Release:	0.1
@@ -50,7 +50,7 @@ ze standardami oraz inteligentne zarządzanie oknami.
 
 %package libs
 Summary:	openbox libraries
-Summary(pl.UTF-8):   Biblioteki openboksa
+Summary(pl.UTF-8):	Biblioteki openboksa
 Group:		Libraries
 
 %description libs
@@ -61,7 +61,7 @@ Biblioteki openboksa.
 
 %package devel
 Summary:	Header files for openbox
-Summary(pl.UTF-8):   Pliki nagłówkowe openbox
+Summary(pl.UTF-8):	Pliki nagłówkowe openbox
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{epoch}:%{version}-%{release}
 
@@ -73,7 +73,7 @@ Pliki nagłówkowe do tworzenia oprogramowania opartego o openbox.
 
 %package static
 Summary:	Static openbox library
-Summary(pl.UTF-8):   Statyczna biblioteka openbox
+Summary(pl.UTF-8):	Statyczna biblioteka openbox
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
@@ -85,7 +85,7 @@ Statyczna biblioteka openbox.
 
 %package themes-Allegro
 Summary:	Allegro theme for openbox
-Summary(pl.UTF-8):   Motyw Allegro dla openboxa
+Summary(pl.UTF-8):	Motyw Allegro dla openboxa
 Group:		Themes
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -97,7 +97,7 @@ Motyw Allegro dla openboxa.
 
 %package themes-Artwiz
 Summary:	Artwiz theme for openbox
-Summary(pl.UTF-8):   Motyw Artwiz dla openboxa
+Summary(pl.UTF-8):	Motyw Artwiz dla openboxa
 Group:		Themes
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -109,7 +109,7 @@ Motyw Artwiz dla openboxa.
 
 %package themes-Blah41
 Summary:	Blah41 theme for openbox
-Summary(pl.UTF-8):   Motyw Blah41 dla openboxa
+Summary(pl.UTF-8):	Motyw Blah41 dla openboxa
 Group:		Themes
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -121,7 +121,7 @@ Motyw Blah41 dla openboxa.
 
 %package themes-Om4Ob
 Summary:	Om4Ob theme for openbox
-Summary(pl.UTF-8):   Motyw Om4Ob dla openboxa
+Summary(pl.UTF-8):	Motyw Om4Ob dla openboxa
 Group:		Themes
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -133,7 +133,7 @@ Motyw Om4Ob dla openboxa.
 
 %package themes-bear
 Summary:	Bear theme for openbox
-Summary(pl.UTF-8):   Motyw Bear dla openboxa
+Summary(pl.UTF-8):	Motyw Bear dla openboxa
 Group:		Themes
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	openbox-theme-base = %{epoch}:%{version}-%{release}
