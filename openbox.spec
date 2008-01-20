@@ -14,8 +14,8 @@ BuildRequires:	automake
 BuildRequires:	gettext-devel >= 0.15
 BuildRequires:	glib2-devel >= 1:2.14.0
 BuildRequires:	libtool
-BuildRequires:	pango-devel >= 1.18.3
 BuildRequires:	libxml2-devel >= 1:2.6.31
+BuildRequires:	pango-devel >= 1.18.3
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	startup-notification-devel
@@ -41,8 +41,8 @@ support/compliance, and intelligent window management.
 
 %description -l pl.UTF-8
 Openbox jest całkowicie nowym zarządcą okien i nie bazuje już na
-kodzie wcześniejszych wersji. Jego głównymi celami są wsparcie i zgodność
-ze standardami oraz inteligentne zarządzanie oknami.
+kodzie wcześniejszych wersji. Jego głównymi celami są wsparcie i
+zgodność ze standardami oraz inteligentne zarządzanie oknami.
 
 %package libs
 Summary:	Openbox libraries
@@ -60,6 +60,10 @@ Summary:	Header files for Openbox
 Summary(pl.UTF-8):	Pliki nagłówkowe Openboksa
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{epoch}:%{version}-%{release}
+Requires:	glib2-devel >= 1:2.14.0
+Requires:	libxml2-devel >= 1:2.6.31
+Requires:	pango-devel >= 1.18.3
+Requires:	xorg-lib-libSM-devel
 
 %description devel
 Development header files for writing applications based on Openbox.
