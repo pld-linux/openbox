@@ -1,155 +1,219 @@
-
-# todo:
-# - update themes
-#   - obsolete old ones
-#   - subpackages for new ones
-# - l10n files listed twice
-
 Summary:	Small and fast window manger for the X Window
 Summary(pl.UTF-8):	Mały i szybki zarządca okien dla X Window
 Name:		openbox
-Version:	3.3.1
-Release:	0.1
+Version:	3.4.5
+Release:	1
 Epoch:		1
-License:	GPL
+License:	GPL v2+
 Group:		X11/Window Managers
 Source0:	http://openbox.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	6dc25d5fbff5d6277593b89974f950d8
-Source1:	%{name}-xsession.desktop
+# Source0-md5:	06e007ef96ab3f7f4bbc34c4464af6c2
 URL:		http://openbox.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
-BuildRequires:	bison
-BuildRequires:	flex
-BuildRequires:	gettext-autopoint >= 0.12.1
+BuildRequires:	gettext-devel >= 0.15
+BuildRequires:	glib2-devel >= 1:2.14.0
 BuildRequires:	libtool
-BuildRequires:	libxml2-devel >= 1:2.6.26
-BuildRequires:	pango-devel >= 1.14.0
+BuildRequires:	pango-devel >= 1.18.3
+BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	startup-notification-devel
 BuildRequires:	xorg-lib-libSM-devel
+BuildRequires:	xorg-lib-libXcursor-devel
 BuildRequires:	xorg-lib-libXinerama-devel
 BuildRequires:	xorg-lib-libXrandr-devel
 Requires:	%{name}-libs = %{epoch}:%{version}-%{release}
 Requires:	%{name}-theme-base = %{epoch}:%{version}-%{release}
 Provides:	gnome-wm
+Obsoletes:	openbox-themes-Allegro
+Obsoletes:	openbox-themes-Artwiz
+Obsoletes:	openbox-themes-Blah41
+Obsoletes:	openbox-themes-Om4Ob
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_wmpropsdir	/usr/share/wm-properties
 
 %description
-Openbox3 is a completely new window manager, and is not based upon any
+Openbox is a completely new window manager, and is not based upon any
 previous window manager code-base. Its primary goals are standards
 support/compliance, and intelligent window management.
 
 %description -l pl.UTF-8
-Openbox3 jest całkowicie nowym zarządcą okien i nie bazuje już na
+Openbox jest całkowicie nowym zarządcą okien i nie bazuje już na
 kodzie wcześniejszych wersji. Jego głównymi celami są wsparcie i zgodność
 ze standardami oraz inteligentne zarządzanie oknami.
 
 %package libs
-Summary:	openbox libraries
-Summary(pl.UTF-8):	Biblioteki openboksa
+Summary:	Openbox libraries
+Summary(pl.UTF-8):	Biblioteki Openboksa
 Group:		Libraries
 
 %description libs
-openbox libraries.
+Openbox libraries.
 
 %description libs -l pl.UTF-8
-Biblioteki openboksa.
+Biblioteki Openboksa.
 
 %package devel
-Summary:	Header files for openbox
-Summary(pl.UTF-8):	Pliki nagłówkowe openbox
+Summary:	Header files for Openbox
+Summary(pl.UTF-8):	Pliki nagłówkowe Openboksa
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{epoch}:%{version}-%{release}
 
 %description devel
-Development header files for writing applications based on openbox.
+Development header files for writing applications based on Openbox.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe do tworzenia oprogramowania opartego o openbox.
+Pliki nagłówkowe do tworzenia oprogramowania opartego o Openboksa.
 
 %package static
-Summary:	Static openbox library
-Summary(pl.UTF-8):	Statyczna biblioteka openbox
+Summary:	Static Openbox libraries
+Summary(pl.UTF-8):	Statyczne biblioteki Openboksa
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
-Static openbox library.
+Static Openbox libraries.
 
 %description static -l pl.UTF-8
-Statyczna biblioteka openbox.
+Statyczne biblioteki Openboksa.
 
-%package themes-Allegro
-Summary:	Allegro theme for openbox
-Summary(pl.UTF-8):	Motyw Allegro dla openboxa
+%package themes-Artwiz-boxed
+Summary:	Artwiz-boxed theme for Openbox
+Summary(pl.UTF-8):	Motyw Artwiz-boxed dla Openboksa
 Group:		Themes
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Provides:	openbox-theme-base = %{epoch}:%{version}-%{release}
 
-%description themes-Allegro
-Allegro theme for openbox.
+%description themes-Artwiz-boxed
+Artwiz-boxed theme for Openbox.
 
-%description themes-Allegro -l pl.UTF-8
-Motyw Allegro dla openboxa.
-
-%package themes-Artwiz
-Summary:	Artwiz theme for openbox
-Summary(pl.UTF-8):	Motyw Artwiz dla openboxa
-Group:		Themes
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-
-%description themes-Artwiz
-Artwiz theme for openbox.
-
-%description themes-Artwiz -l pl.UTF-8
-Motyw Artwiz dla openboxa.
-
-%package themes-Blah41
-Summary:	Blah41 theme for openbox
-Summary(pl.UTF-8):	Motyw Blah41 dla openboxa
-Group:		Themes
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-
-%description themes-Blah41
-Blah41 theme for openbox.
-
-%description themes-Allegro -l pl.UTF-8
-Motyw Blah41 dla openboxa.
-
-%package themes-Om4Ob
-Summary:	Om4Ob theme for openbox
-Summary(pl.UTF-8):	Motyw Om4Ob dla openboxa
-Group:		Themes
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-
-%description themes-Om4Ob
-Om4Ob theme for openbox.
-
-%description themes-Om4Ob -l pl.UTF-8
-Motyw Om4Ob dla openboxa.
+%description themes-Artwiz-boxed -l pl.UTF-8
+Motyw Artwiz-boxed dla Openboksa.
 
 %package themes-bear
-Summary:	Bear theme for openbox
-Summary(pl.UTF-8):	Motyw Bear dla openboxa
+Summary:	Bear theme for Openbox
+Summary(pl.UTF-8):	Motyw Bear dla Openboksa
 Group:		Themes
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Provides:	openbox-theme-base = %{epoch}:%{version}-%{release}
 Obsoletes:	openbox-themes-TheBear
 
 %description themes-bear
-Bear theme for openbox.
+Bear theme for Openbox.
 
 %description themes-bear -l pl.UTF-8
-Motyw Bear dla openboxa.
+Motyw Bear dla Openboksa.
+
+%package themes-Clearlooks-Olive
+Summary:	Clearlooks-Olive theme for Openbox
+Summary(pl.UTF-8):	Motyw Clearlooks-Olive dla Openboksa
+Group:		Themes
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Provides:	openbox-theme-base = %{epoch}:%{version}-%{release}
+
+%description themes-Clearlooks-Olive
+Clearlooks-Olive theme for Openbox.
+
+%description themes-Clearlooks-Olive -l pl.UTF-8
+Motyw Clearlooks-Olive dla Openboksa.
+
+%package themes-Clearlooks
+Summary:	Clearlooks theme for Openbox
+Summary(pl.UTF-8):	Motyw Clearlooks dla Openboksa
+Group:		Themes
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Provides:	openbox-theme-base = %{epoch}:%{version}-%{release}
+
+%description themes-Clearlooks
+Clearlooks theme for Openbox.
+
+%description themes-Clearlooks -l pl.UTF-8
+Motyw Clearlooks dla Openboksa.
+
+%package themes-Mikachu
+Summary:	Mikachu theme for Openbox
+Summary(pl.UTF-8):	Motyw Mikachu dla Openboksa
+Group:		Themes
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Provides:	openbox-theme-base = %{epoch}:%{version}-%{release}
+
+%description themes-Mikachu
+Mikachu theme for Openbox.
+
+%description themes-Mikachu -l pl.UTF-8
+Motyw Mikachu dla Openboksa.
+
+%package themes-Natura
+Summary:	Natura theme for Openbox
+Summary(pl.UTF-8):	Motyw Natura dla Openboksa
+Group:		Themes
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Provides:	openbox-theme-base = %{epoch}:%{version}-%{release}
+
+%description themes-Natura
+Natura theme for Openbox.
+
+%description themes-Natura -l pl.UTF-8
+Motyw Natura dla Openboksa.
+
+%package themes-Onyx-Citrus
+Summary:	Onyx-Citrus theme for Openbox
+Summary(pl.UTF-8):	Motyw Onyx-Citrus dla Openboksa
+Group:		Themes
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Provides:	openbox-theme-base = %{epoch}:%{version}-%{release}
+
+%description themes-Onyx-Citrus
+Onyx-Citrus theme for Openbox.
+
+%description themes-Onyx-Citrus -l pl.UTF-8
+Motyw Onyx-Citrus dla Openboksa.
+
+%package themes-Onyx
+Summary:	Onyx theme for Openbox
+Summary(pl.UTF-8):	Motyw Onyx dla Openboksa
+Group:		Themes
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Provides:	openbox-theme-base = %{epoch}:%{version}-%{release}
+
+%description themes-Onyx
+Onyx theme for Openbox.
+
+%description themes-Onyx -l pl.UTF-8
+Motyw Onyx dla Openboksa.
+
+%package themes-Orang
+Summary:	Orang theme for Openbox
+Summary(pl.UTF-8):	Motyw Orang dla Openboksa
+Group:		Themes
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Provides:	openbox-theme-base = %{epoch}:%{version}-%{release}
+
+%description themes-Orang
+Orang theme for Openbox.
+
+%description themes-Orang -l pl.UTF-8
+Motyw Orang dla Openboksa.
+
+%package themes-Syscrash
+Summary:	Syscrash theme for Openbox
+Summary(pl.UTF-8):	Motyw Syscrash dla Openboksa
+Group:		Themes
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Provides:	openbox-theme-base = %{epoch}:%{version}-%{release}
+
+%description themes-Syscrash
+Syscrash theme for Openbox.
+
+%description themes-Syscrash -l pl.UTF-8
+Motyw Syscrash dla Openboksa.
 
 %prep
 %setup -q
 
 %build
-%{__autopoint}
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
@@ -162,13 +226,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	desktopfilesdir=%{_wmpropsdir}
+	gnomewmfilesdir=%{_wmpropsdir}
 
-# gdm/kdm support
-install -d $RPM_BUILD_ROOT%{_datadir}/xsessions
-install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsessions/openbox.desktop
+mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{ua,uk}
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
+rm -rf $RPM_BUILD_ROOT%{_datadir}/doc/openbox
 rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 %find_lang %{name} --all-name
@@ -181,59 +243,88 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc CHANGELOG COMPLIANCE README
-%attr(755,root,root) %{_bindir}/*
-%dir %{_datadir}/openbox
-%{_datadir}/openbox/*
+%doc AUTHORS CHANGELOG COMPLIANCE README
+%doc data/{menu.xsd,rc.xsd,xbm/*} doc/rc-mouse-focus.xml
+%attr(755,root,root) %{_bindir}/gnome-panel-control
+%attr(755,root,root) %{_bindir}/openbox
+%attr(755,root,root) %{_bindir}/openbox-gnome-session
+%attr(755,root,root) %{_bindir}/openbox-kde-session
+%attr(755,root,root) %{_bindir}/openbox-session
+%{_datadir}/xsessions/openbox-gnome.desktop
+%{_datadir}/xsessions/openbox-kde.desktop
 %{_datadir}/xsessions/openbox.desktop
-%{_pixmapsdir}/openbox.png
+%{_mandir}/man1/openbox-gnome-session.1*
+%{_mandir}/man1/openbox-kde-session.1*
+%{_mandir}/man1/openbox-session.1*
+%{_mandir}/man1/openbox.1*
 %dir %{_sysconfdir}/xdg/openbox
-%{_sysconfdir}/xdg/openbox/*.xml
+%{_sysconfdir}/xdg/openbox/autostart.sh
+%{_sysconfdir}/xdg/openbox/menu.xml
+%{_sysconfdir}/xdg/openbox/rc.xml
 %{_wmpropsdir}/openbox.desktop
+%{_pixmapsdir}/openbox.png
 
 %files libs
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libobparser.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libobparser.so.16
+%attr(755,root,root) %{_libdir}/libobrender.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libobrender.so.16
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libobparser.so
+%attr(755,root,root) %{_libdir}/libobrender.so
+%{_libdir}/libobparser.la
+%{_libdir}/libobrender.la
 %dir %{_includedir}/openbox
-%dir %{_includedir}/openbox/3.3
-%dir %{_includedir}/openbox/3.3/openbox
-%{_includedir}/openbox/3.3/openbox/*.h
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_pkgconfigdir}/*.pc
+%dir %{_includedir}/openbox/3.4
+%dir %{_includedir}/openbox/3.4/openbox
+%{_includedir}/openbox/3.4/openbox/*.h
+%{_pkgconfigdir}/obparser-3.0.pc
+%{_pkgconfigdir}/obrender-3.0.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libobparser.a
+%{_libdir}/libobrender.a
 
-#%files themes-Allegro
-#%defattr(644,root,root,755)
-#%dir %{_datadir}/themes/Allegro
-#%dir %{_datadir}/themes/Allegro/openbox-3
-#%{_datadir}/themes/Allegro/openbox-3/*
-
-#%files themes-Artwiz
-#%defattr(644,root,root,755)
-#%dir %{_datadir}/themes/Artwiz
-#%dir %{_datadir}/themes/Artwiz/openbox-3
-#%{_datadir}/themes/Artwiz/openbox-3/*
-
-#%files themes-Blah41
-#%defattr(644,root,root,755)
-#%dir %{_datadir}/themes/Blah41
-#%dir %{_datadir}/themes/Blah41/openbox-3
-#%{_datadir}/themes/Blah41/openbox-3/*
-
-#%files themes-Om4Ob
-#%defattr(644,root,root,755)
-#%dir %{_datadir}/themes/Om4Ob
-#%dir %{_datadir}/themes/Om4Ob/openbox-3
-#%{_datadir}/themes/Om4Ob/openbox-3/*
+%files themes-Artwiz-boxed
+%defattr(644,root,root,755)
+%{_datadir}/themes/Artwiz-boxed
 
 %files themes-bear
 %defattr(644,root,root,755)
-%dir %{_datadir}/themes/bear2
-%dir %{_datadir}/themes/bear2/openbox-3
-%{_datadir}/themes/bear2/openbox-3/*
+%{_datadir}/themes/Bear2
+
+%files themes-Clearlooks-Olive
+%defattr(644,root,root,755)
+%{_datadir}/themes/Clearlooks-Olive
+
+%files themes-Clearlooks
+%defattr(644,root,root,755)
+%{_datadir}/themes/Clearlooks
+
+%files themes-Mikachu
+%defattr(644,root,root,755)
+%{_datadir}/themes/Mikachu
+
+%files themes-Natura
+%defattr(644,root,root,755)
+%{_datadir}/themes/Natura
+
+%files themes-Onyx-Citrus
+%defattr(644,root,root,755)
+%{_datadir}/themes/Onyx-Citrus
+
+%files themes-Onyx
+%defattr(644,root,root,755)
+%{_datadir}/themes/Onyx
+
+%files themes-Orang
+%defattr(644,root,root,755)
+%{_datadir}/themes/Orang
+
+%files themes-Syscrash
+%defattr(644,root,root,755)
+%{_datadir}/themes/Syscrash
