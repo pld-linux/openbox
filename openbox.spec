@@ -1,13 +1,13 @@
 Summary:	Small and fast window manger for the X Window
 Summary(pl.UTF-8):	Mały i szybki zarządca okien dla X Window
 Name:		openbox
-Version:	3.4.5
-Release:	1
+Version:	3.4.7.2
+Release:	0.1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Window Managers
 Source0:	http://openbox.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	06e007ef96ab3f7f4bbc34c4464af6c2
+# Source0-md5:	9e7589e90519bc6ac2f4656ea6869439
 URL:		http://openbox.org/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
@@ -30,6 +30,7 @@ Obsoletes:	openbox-themes-Allegro
 Obsoletes:	openbox-themes-Artwiz
 Obsoletes:	openbox-themes-Blah41
 Obsoletes:	openbox-themes-Om4Ob
+Suggests:	obconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_wmpropsdir	/usr/share/wm-properties
