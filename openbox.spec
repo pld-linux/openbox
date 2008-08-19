@@ -15,6 +15,7 @@ BuildRequires:	gettext-devel >= 0.15
 BuildRequires:	glib2-devel >= 1:2.14.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.31
+BuildRequires:	libuuid-devel
 BuildRequires:	pango-devel >= 1.18.3
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
@@ -272,9 +273,9 @@ rm -rf $RPM_BUILD_ROOT
 %files libs
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libobparser.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libobparser.so.16
+%attr(755,root,root) %ghost %{_libdir}/libobparser.so.21
 %attr(755,root,root) %{_libdir}/libobrender.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libobrender.so.16
+%attr(755,root,root) %ghost %{_libdir}/libobrender.so.21
 
 %files devel
 %defattr(644,root,root,755)
