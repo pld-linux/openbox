@@ -32,9 +32,10 @@ Obsoletes:	openbox-themes-Artwiz
 Obsoletes:	openbox-themes-Blah41
 Obsoletes:	openbox-themes-Om4Ob
 Suggests:	obconf
+Conflicts:	filesystem < 3.0-20
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_wmpropsdir	/usr/share/wm-properties
+%define		_wmpropsdir	/usr/share/gnome/wm-properties
 
 %description
 Openbox is a completely new window manager, and is not based upon any
