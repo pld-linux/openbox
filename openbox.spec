@@ -2,7 +2,7 @@ Summary:	Small and fast window manger for the X Window
 Summary(pl.UTF-8):	Mały i szybki zarządca okien dla X Window
 Name:		openbox
 Version:	3.4.7.2
-Release:	0.1
+Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Window Managers
