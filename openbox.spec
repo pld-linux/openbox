@@ -235,8 +235,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	gnomewmfilesdir=%{_wmpropsdir}
 
-#mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{ua,uk}
-
 rm -rf $RPM_BUILD_ROOT%{_datadir}/doc/openbox
 rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/no
 
