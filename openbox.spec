@@ -1,21 +1,21 @@
 Summary:	Small and fast window manger for the X Window
 Summary(pl.UTF-8):	Mały i szybki zarządca okien dla X Window
 Name:		openbox
-Version:	3.4.7.2
+Version:	3.4.9
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Window Managers
 Source0:	http://openbox.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	9e7589e90519bc6ac2f4656ea6869439
+# Source0-md5:	2f30670f7067e3e17567019d2eef21a0
 URL:		http://openbox.org/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
 BuildRequires:	gettext-devel >= 0.15
 BuildRequires:	glib2-devel >= 1:2.14.0
 BuildRequires:	libtool
-BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	libuuid-devel
+BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	pango-devel >= 1.18.3
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
@@ -26,12 +26,12 @@ BuildRequires:	xorg-lib-libXinerama-devel
 BuildRequires:	xorg-lib-libXrandr-devel
 Requires:	%{name}-libs = %{epoch}:%{version}-%{release}
 Requires:	%{name}-theme-base = %{epoch}:%{version}-%{release}
+Suggests:	obconf
 Provides:	gnome-wm
 Obsoletes:	openbox-themes-Allegro
 Obsoletes:	openbox-themes-Artwiz
 Obsoletes:	openbox-themes-Blah41
 Obsoletes:	openbox-themes-Om4Ob
-Suggests:	obconf
 Conflicts:	filesystem < 3.0-20
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -235,7 +235,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	gnomewmfilesdir=%{_wmpropsdir}
 
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{ua,uk}
+#mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{ua,uk}
 
 rm -rf $RPM_BUILD_ROOT%{_datadir}/doc/openbox
 rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/no
@@ -257,6 +257,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/openbox-gnome-session
 %attr(755,root,root) %{_bindir}/openbox-kde-session
 %attr(755,root,root) %{_bindir}/openbox-session
+%attr(755,root,root) %{_bindir}/gdm-control
+%attr(755,root,root) %{_bindir}/obprop
 %{_datadir}/xsessions/openbox-gnome.desktop
 %{_datadir}/xsessions/openbox-kde.desktop
 %{_datadir}/xsessions/openbox.desktop
@@ -269,7 +271,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/xdg/openbox/menu.xml
 %{_sysconfdir}/xdg/openbox/rc.xml
 %{_wmpropsdir}/openbox.desktop
+%{_desktopdir}/openbox.desktop
 %{_pixmapsdir}/openbox.png
+%dir %{_libdir}/openbox
+%{_libdir}/openbox/xdg-autostart
 
 %files libs
 %defattr(644,root,root,755)
