@@ -1,13 +1,13 @@
 Summary:	Small and fast window manger for the X Window
 Summary(pl.UTF-8):	Mały i szybki zarządca okien dla X Window
 Name:		openbox
-Version:	3.4.9
+Version:	3.4.10
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Window Managers
 Source0:	http://openbox.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	2f30670f7067e3e17567019d2eef21a0
+# Source0-md5:	daccf153c7808950313eb00bc250f9bc
 URL:		http://openbox.org/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
@@ -256,7 +256,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/openbox-kde-session
 %attr(755,root,root) %{_bindir}/openbox-session
 %attr(755,root,root) %{_bindir}/gdm-control
-%attr(755,root,root) %{_bindir}/obprop
+%attr(755,root,root) %{_bindir}/obxprop
 %{_datadir}/xsessions/openbox-gnome.desktop
 %{_datadir}/xsessions/openbox-kde.desktop
 %{_datadir}/xsessions/openbox.desktop
