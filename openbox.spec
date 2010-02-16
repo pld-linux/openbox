@@ -18,6 +18,7 @@ BuildRequires:	libuuid-devel
 BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	pango-devel >= 1.18.3
 BuildRequires:	pkgconfig
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	startup-notification-devel
 BuildRequires:	xorg-lib-libSM-devel
