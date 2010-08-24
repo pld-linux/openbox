@@ -1,13 +1,13 @@
 Summary:	Small and fast window manger for the X Window
 Summary(pl.UTF-8):	Mały i szybki zarządca okien dla X Window
 Name:		openbox
-Version:	3.4.10
-Release:	2
+Version:	3.4.11.2
+Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Window Managers
 Source0:	http://openbox.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	daccf153c7808950313eb00bc250f9bc
+# Source0-md5:	30e669134fa81df810fe7d1dc59cd931
 URL:		http://openbox.org/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
@@ -261,6 +261,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/xsessions/openbox-gnome.desktop
 %{_datadir}/xsessions/openbox-kde.desktop
 %{_datadir}/xsessions/openbox.desktop
+%{_mandir}/man1/obxprop.1*
 %{_mandir}/man1/openbox-gnome-session.1*
 %{_mandir}/man1/openbox-kde-session.1*
 %{_mandir}/man1/openbox-session.1*
@@ -289,9 +290,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libobparser.la
 %{_libdir}/libobrender.la
 %dir %{_includedir}/openbox
-%dir %{_includedir}/openbox/3.4
-%dir %{_includedir}/openbox/3.4/openbox
-%{_includedir}/openbox/3.4/openbox/*.h
+%dir %{_includedir}/openbox/3.4.11.2
+%dir %{_includedir}/openbox/3.4.11.2/openbox
+%{_includedir}/openbox/3.4.11.2/openbox/*.h
 %{_pkgconfigdir}/obparser-3.0.pc
 %{_pkgconfigdir}/obrender-3.0.pc
 
