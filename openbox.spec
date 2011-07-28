@@ -1,8 +1,12 @@
+#
+# Conditional build:
+%bcond_with	gnome		# build with support for GNOME2 wm-properties
+#
 Summary:	Small and fast window manger for the X Window
 Summary(pl.UTF-8):	Mały i szybki zarządca okien dla X Window
 Name:		openbox
 Version:	3.4.11.2
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Window Managers
@@ -236,7 +240,10 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	gnomewmfilesdir=%{_wmpropsdir}
 
-rm -rf $RPM_BUILD_ROOT%{_datadir}/doc/openbox
+%{!?with_gnome:%{__rm} $RPM_BUILD_ROOT%{_wmpropsdir}/openbox.desktop}
+
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/doc/openbox
+
 mv $RPM_BUILD_ROOT%{_datadir}/locale/{no,nb}
 
 %find_lang %{name} --all-name
@@ -270,7 +277,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/xdg/openbox/autostart.sh
 %{_sysconfdir}/xdg/openbox/menu.xml
 %{_sysconfdir}/xdg/openbox/rc.xml
-%{_wmpropsdir}/openbox.desktop
+%{?with_gnome:%{_wmpropsdir}/openbox.desktop}
 %{_desktopdir}/openbox.desktop
 %{_pixmapsdir}/openbox.png
 %dir %{_libdir}/openbox
