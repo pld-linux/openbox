@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_with	gnome		# build with support for GNOME2 wm-properties
+%bcond_with	gnome2		# build with support for GNOME2 wm-properties
 #
 Summary:	Small and fast window manger for the X Window
 Summary(pl.UTF-8):	Mały i szybki zarządca okien dla X Window
@@ -240,7 +240,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	gnomewmfilesdir=%{_wmpropsdir}
 
-%{!?with_gnome:%{__rm} $RPM_BUILD_ROOT%{_wmpropsdir}/openbox.desktop}
+%{!?with_gnome2:%{__rm} $RPM_BUILD_ROOT%{_wmpropsdir}/openbox.desktop}
 
 %{__rm} -r $RPM_BUILD_ROOT%{_datadir}/doc/openbox
 
@@ -277,7 +277,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/xdg/openbox/autostart.sh
 %{_sysconfdir}/xdg/openbox/menu.xml
 %{_sysconfdir}/xdg/openbox/rc.xml
-%{?with_gnome:%{_wmpropsdir}/openbox.desktop}
+%{?with_gnome2:%{_wmpropsdir}/openbox.desktop}
 %{_desktopdir}/openbox.desktop
 %{_pixmapsdir}/openbox.png
 %dir %{_libdir}/openbox
