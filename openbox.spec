@@ -1,12 +1,12 @@
 #
 # Conditional build:
 %bcond_with	gnome2		# build with support for GNOME2 wm-properties
-#
+
 Summary:	Small and fast window manger for the X Window
 Summary(pl.UTF-8):	Mały i szybki zarządca okien dla X Window
 Name:		openbox
 Version:	3.4.11.2
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Window Managers
@@ -31,6 +31,7 @@ BuildRequires:	xorg-lib-libXinerama-devel
 BuildRequires:	xorg-lib-libXrandr-devel
 Requires:	%{name}-libs = %{epoch}:%{version}-%{release}
 Requires:	%{name}-theme-base = %{epoch}:%{version}-%{release}
+Requires:	dbus-x11
 Suggests:	obconf
 Provides:	gnome-wm
 Obsoletes:	openbox-themes-Allegro
