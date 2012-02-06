@@ -5,13 +5,14 @@
 Summary:	Small and fast window manger for the X Window
 Summary(pl.UTF-8):	Mały i szybki zarządca okien dla X Window
 Name:		openbox
-Version:	3.4.11.2
-Release:	3
+Version:	3.5.0
+Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Window Managers
 Source0:	http://openbox.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	30e669134fa81df810fe7d1dc59cd931
+# Source0-md5:	00441b53cf14c03566c8e82643544ff9
+Patch0:		%{name}-link.patch
 URL:		http://openbox.org/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
@@ -225,6 +226,7 @@ Motyw Syscrash dla Openboksa.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -275,38 +277,41 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/openbox-session.1*
 %{_mandir}/man1/openbox.1*
 %dir %{_sysconfdir}/xdg/openbox
-%{_sysconfdir}/xdg/openbox/autostart.sh
+%{_sysconfdir}/xdg/openbox/autostart
+%{_sysconfdir}/xdg/openbox/environment
 %{_sysconfdir}/xdg/openbox/menu.xml
 %{_sysconfdir}/xdg/openbox/rc.xml
 %{?with_gnome2:%{_wmpropsdir}/openbox.desktop}
 %{_desktopdir}/openbox.desktop
 %{_pixmapsdir}/openbox.png
-%dir %{_libdir}/openbox
-%{_libdir}/openbox/xdg-autostart
+%attr(755,root,root) %{_libdir}/openbox-autostart
+%attr(755,root,root) %{_libdir}/openbox-xdg-autostart
 
 %files libs
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libobparser.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libobparser.so.21
 %attr(755,root,root) %{_libdir}/libobrender.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libobrender.so.21
+%attr(755,root,root) %ghost %{_libdir}/libobrender.so.27
+%attr(755,root,root) %{_libdir}/libobt.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libobt.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libobparser.so
 %attr(755,root,root) %{_libdir}/libobrender.so
-%{_libdir}/libobparser.la
+%attr(755,root,root) %{_libdir}/libobt.so
 %{_libdir}/libobrender.la
+%{_libdir}/libobt.la
 %dir %{_includedir}/openbox
-%dir %{_includedir}/openbox/3.4.11.2
-%dir %{_includedir}/openbox/3.4.11.2/openbox
-%{_includedir}/openbox/3.4.11.2/openbox/*.h
-%{_pkgconfigdir}/obparser-3.0.pc
-%{_pkgconfigdir}/obrender-3.0.pc
+%dir %{_includedir}/openbox/3.5
+%dir %{_includedir}/openbox/3.5/obrender
+%{_includedir}/openbox/3.5/obrender/*.h
+%dir %{_includedir}/openbox/3.5/obt
+%{_includedir}/openbox/3.5/obt/*.h
+%{_pkgconfigdir}/obrender-3.5.pc
+%{_pkgconfigdir}/obt-3.5.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libobparser.a
+%{_libdir}/libobt.a
 %{_libdir}/libobrender.a
 
 %files themes-Artwiz-boxed
