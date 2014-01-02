@@ -5,14 +5,14 @@
 Summary:	Small and fast window manger for the X Window
 Summary(pl.UTF-8):	Mały i szybki zarządca okien dla X Window
 Name:		openbox
-Version:	3.5.0
-Release:	2
+Version:	3.5.2
+Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Window Managers
 Source0:	http://openbox.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	00441b53cf14c03566c8e82643544ff9
-Patch0:		%{name}-link.patch
+# Source0-md5:	93df606606053b7e8578a5c116afb8ec
+#Patch0:		%{name}-link.patch
 URL:		http://openbox.org/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
@@ -226,7 +226,7 @@ Motyw Syscrash dla Openboksa.
 
 %prep
 %setup -q
-%patch0 -p1
+#%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -234,7 +234,7 @@ Motyw Syscrash dla Openboksa.
 %{__autoconf}
 %{__automake}
 %configure
-%{__make}
+%{__make} V=1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -290,9 +290,9 @@ rm -rf $RPM_BUILD_ROOT
 %files libs
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libobrender.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libobrender.so.27
+%attr(755,root,root) %ghost %{_libdir}/libobrender.so.??
 %attr(755,root,root) %{_libdir}/libobt.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libobt.so.0
+%attr(755,root,root) %ghost %{_libdir}/libobt.so.?
 
 %files devel
 %defattr(644,root,root,755)
