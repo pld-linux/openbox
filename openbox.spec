@@ -16,7 +16,7 @@ Source0:	http://openbox.org/releases/%{name}-%{version}.tar.gz
 URL:		http://openbox.org/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
-BuildRequires:	gettext-devel >= 0.15
+BuildRequires:	gettext-tools >= 0.15
 BuildRequires:	glib2-devel >= 1:2.14.0
 BuildRequires:	libtool
 BuildRequires:	libuuid-devel
