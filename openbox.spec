@@ -299,12 +299,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libobrender.so
 %attr(755,root,root) %{_libdir}/libobt.so
-%dir %{_includedir}/openbox
-%dir %{_includedir}/openbox/3.5
-%dir %{_includedir}/openbox/3.5/obrender
-%{_includedir}/openbox/3.5/obrender/*.h
-%dir %{_includedir}/openbox/3.5/obt
-%{_includedir}/openbox/3.5/obt/*.h
+%{_includedir}/openbox
 %{_pkgconfigdir}/obrender-3.5.pc
 %{_pkgconfigdir}/obt-3.5.pc
 
