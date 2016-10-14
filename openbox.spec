@@ -5,13 +5,13 @@
 Summary:	Small and fast window manger for the X Window
 Summary(pl.UTF-8):	Mały i szybki zarządca okien dla X Window
 Name:		openbox
-Version:	3.5.2
-Release:	2
+Version:	3.6.1
+Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Window Managers
-Source0:	http://openbox.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	93df606606053b7e8578a5c116afb8ec
+Source0:	http://openbox.org/releases/%{name}-%{version}.tar.xz
+# Source0-md5:	46bf5f1edda0eda0d9e824b585988be9
 #Patch0:		%{name}-link.patch
 URL:		http://openbox.org/
 BuildRequires:	autoconf >= 2.54
@@ -246,6 +246,7 @@ rm -rf $RPM_BUILD_ROOT
 %{!?with_gnome2:%{__rm} $RPM_BUILD_ROOT%{_wmpropsdir}/openbox.desktop}
 
 %{__rm} -r $RPM_BUILD_ROOT%{_datadir}/doc/openbox
+%{__rm} -r $RPM_BUILD_ROOT%{_libdir}/libob*.la
 
 mv $RPM_BUILD_ROOT%{_datadir}/locale/{no,nb}
 
@@ -298,8 +299,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libobrender.so
 %attr(755,root,root) %{_libdir}/libobt.so
-%{_libdir}/libobrender.la
-%{_libdir}/libobt.la
 %dir %{_includedir}/openbox
 %dir %{_includedir}/openbox/3.5
 %dir %{_includedir}/openbox/3.5/obrender
