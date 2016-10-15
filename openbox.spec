@@ -6,7 +6,7 @@ Summary:	Small and fast window manger for the X Window
 Summary(pl.UTF-8):	Mały i szybki zarządca okien dla X Window
 Name:		openbox
 Version:	3.6.1
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Window Managers
@@ -248,7 +248,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__rm} -r $RPM_BUILD_ROOT%{_datadir}/doc/openbox
 %{__rm} -r $RPM_BUILD_ROOT%{_libdir}/libob*.la
 
-mv $RPM_BUILD_ROOT%{_datadir}/locale/{no,nb}
+%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{no,nb}
+%{__rm} $RPM_BUILD_ROOT%{_datadir}/locale/gl_ES
 
 %find_lang %{name} --all-name
 
