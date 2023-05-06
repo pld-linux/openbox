@@ -10,6 +10,7 @@ Release:	6
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Window Managers
+#Source0Download: http://openbox.org/wiki/Openbox:Download
 Source0:	http://openbox.org/dist/openbox/%{name}-%{version}.tar.xz
 # Source0-md5:	46bf5f1edda0eda0d9e824b585988be9
 URL:		http://openbox.org/
