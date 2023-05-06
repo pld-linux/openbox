@@ -6,7 +6,7 @@ Summary:	Small and fast window manger for the X Window
 Summary(pl.UTF-8):	Mały i szybki zarządca okien dla X Window
 Name:		openbox
 Version:	3.6.1
-Release:	5
+Release:	6
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Window Managers
@@ -284,6 +284,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/openbox-session
 %attr(755,root,root) %{_bindir}/gdm-control
 %attr(755,root,root) %{_bindir}/obxprop
+%attr(755,root,root) %{_libexecdir}/openbox-autostart
+%attr(755,root,root) %{_libexecdir}/openbox-xdg-autostart
 # requires gnome-session - subpackage?
 #%{_datadir}/gnome-session/sessions/openbox-gnome.session
 #%{_datadir}/gnome-session/sessions/openbox-gnome-fallback.session
@@ -303,8 +305,6 @@ rm -rf $RPM_BUILD_ROOT
 %{?with_gnome2:%{_wmpropsdir}/openbox.desktop}
 %{_desktopdir}/openbox.desktop
 %{_pixmapsdir}/openbox.png
-%attr(755,root,root) %{_libdir}/openbox-autostart
-%attr(755,root,root) %{_libdir}/openbox-xdg-autostart
 
 %files libs
 %defattr(644,root,root,755)
