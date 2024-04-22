@@ -6,13 +6,14 @@ Summary:	Small and fast window manger for the X Window
 Summary(pl.UTF-8):	Mały i szybki zarządca okien dla X Window
 Name:		openbox
 Version:	3.6.1
-Release:	6
+Release:	7
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Window Managers
 #Source0Download: http://openbox.org/wiki/Openbox:Download
 Source0:	http://openbox.org/dist/openbox/%{name}-%{version}.tar.xz
 # Source0-md5:	46bf5f1edda0eda0d9e824b585988be9
+Patch0:		python3.patch
 URL:		http://openbox.org/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake >= 1:1.11
@@ -239,8 +240,7 @@ Motyw Syscrash dla Openboksa.
 
 %prep
 %setup -q
-
-%{__sed} -i -e '1s,/usr/bin/env python$,%{__python},' data/autostart/openbox-xdg-autostart
+%patch0 -p1
 
 %build
 %{__libtoolize}
